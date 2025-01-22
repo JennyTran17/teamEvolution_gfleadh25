@@ -12,7 +12,12 @@ public class Rotator : MonoBehaviour
     private int jumpCounter = 0;
     public GroundCheck groundCheck;
     public Rigidbody2D rb;
+    public GameObject planet;
 
+    private void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
@@ -37,8 +42,8 @@ public class Rotator : MonoBehaviour
             jumpCounter = 0;
             //animator.SetTrigger("Jump");
         }
-
-        if (groundCheck.isGrounded != true && jumpCounter < 2)
+        
+        if (groundCheck.isGrounded != true && jumpCounter < 3)
         {
             
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
@@ -51,7 +56,8 @@ public class Rotator : MonoBehaviour
     {
 
         //Move the planet
-        transform.Rotate(0, 0,  movement.x * rotationSpeed * Time.deltaTime);
+        planet.transform.Rotate(0, 0,  movement.x * rotationSpeed * Time.deltaTime);
+        //player movement
         rb.velocity = new Vector2((movement.x * playerSpeed), rb.velocity.y);
 
     }

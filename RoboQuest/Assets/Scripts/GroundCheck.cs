@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CircleCollider2D))]
+[RequireComponent(typeof(CapsuleCollider2D))]
 public class GroundCheck : MonoBehaviour
 {
 
-    CircleCollider2D circleCollider2D;
+    CapsuleCollider2D capsuleCollider2D;
     public ContactFilter2D cast;
     public float groundDistance = -1.5F;
     RaycastHit2D[] raycastHit2D = new RaycastHit2D[5];
@@ -15,14 +15,19 @@ public class GroundCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        circleCollider2D = gameObject.GetComponent<CircleCollider2D>();
+        capsuleCollider2D = gameObject.GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        Debug.DrawRay(transform.position, transform.forward, Color.green);
+    }
+
     void FixedUpdate()
     {
         // Determine if we're colliding with anything 
-        int collisions = circleCollider2D.Cast(Vector2.down, cast, raycastHit2D, groundDistance);
+        int collisions = capsuleCollider2D.Cast(Vector2.down, cast, raycastHit2D, groundDistance);
         
         // If we collide with the ground
         if (collisions > 0)
