@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public abstract class NPC : MonoBehaviour, Interactable
+public abstract class GeneralInteraction : MonoBehaviour, Interactable
 {
     // This code below is equivalent to Keyboard.current.enterKey.wasPressedThisFrame in Update()
     
@@ -12,8 +12,9 @@ public abstract class NPC : MonoBehaviour, Interactable
     [SerializeField] private SpriteRenderer interactSprite;
 
     public Transform _playerTransform;
-    private const float INTERACT_DISTANCE = 4.5F;
+    private const float INTERACT_DISTANCE = 3F;
     private PlayerInput playerInput;
+
 
     void Start()
     {
@@ -23,9 +24,10 @@ public abstract class NPC : MonoBehaviour, Interactable
 
     void OnKeyboardPressed(InputAction.CallbackContext context)
     {
-        Debug.Log("Enter was pressed - NPC Interaction Triggered");
+        
         // call Interact function
-        Interact();  
+        Interact();
+        Debug.Log("Enter was pressed - NPC Interaction Triggered");
     }
 
     void Update()
@@ -37,13 +39,14 @@ public abstract class NPC : MonoBehaviour, Interactable
         }
         else
         {
-            Debug.Log("No PlayerInput found in the scene!");
+           // Debug.Log("No PlayerInput found in the scene!");
         }
 
         if (interactSprite.gameObject.activeSelf && !IsWithinInteractDistance())
         {
             //turn off the sprite
             interactSprite.gameObject.SetActive(false);
+    
         }
         else if(!interactSprite.gameObject.activeSelf && IsWithinInteractDistance())
         {
