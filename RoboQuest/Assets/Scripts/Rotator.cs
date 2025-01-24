@@ -14,15 +14,18 @@ public class Rotator : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject planet;
 
+    public ScriptableObj playerData;
+
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        
     }
 
     void Update()
     {
        
-       //Debug.Log(rb.velocity);
+       //Debug.Log(playerScriptable.health);
     }
 
     void OnMove(InputValue movePosition)

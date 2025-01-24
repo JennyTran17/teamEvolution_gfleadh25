@@ -286,7 +286,7 @@
                 {
                     "name": "",
                     "id": "69c0e292-a747-4b76-bde7-0e8828d9b834",
-                    "path": "<Keyboard>/enter",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Touch",
