@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interaction
+  - Planet
+  - Trigger
   layers:
   - Default
   - TransparentFX
@@ -41,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: SortingTexture
+    uniqueID: 691194429
     locked: 0

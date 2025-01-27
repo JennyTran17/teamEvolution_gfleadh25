@@ -2,30 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Rotator : MonoBehaviour
 {
-    public float rotationSpeed = 100f;
-    private float playerSpeed = 10.0f;
+    public float rotationSpeed = 20f;
+    public float playerSpeed = 11.0f;
     private Vector2 movement;
     public int jumpImpulse = 7;
     private int jumpCounter = 0;
     public GroundCheck groundCheck;
     public Rigidbody2D rb;
-    public GameObject planet;
+    private GameObject planet;
+    Scene scene;
+
 
     public ScriptableObj playerData;
 
     private void Start()
     {
+        scene = SceneManager.GetActiveScene();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        if(planet == null && scene.name.Equals("Main Level") )
+        {
+            planet = GameObject.FindGameObjectWithTag("Planet");
+        }
+       
         
     }
 
     void Update()
     {
        
-       //Debug.Log(playerScriptable.health);
+       Debug.Log(scene);
     }
 
     void OnMove(InputValue movePosition)
@@ -59,9 +68,13 @@ public class Rotator : MonoBehaviour
     {
 
         //Move the planet
-        planet.transform.Rotate(0, 0,  movement.x * rotationSpeed * Time.deltaTime);
+        if (planet != null)
+        {
+            planet.transform.Rotate(0, 0, movement.x * rotationSpeed * Time.deltaTime);
+        }
         //player movement
         rb.velocity = new Vector2((movement.x * playerSpeed), rb.velocity.y);
 
     }
+
 }
