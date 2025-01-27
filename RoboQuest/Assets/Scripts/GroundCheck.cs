@@ -8,7 +8,7 @@ public class GroundCheck : MonoBehaviour
 
     CapsuleCollider2D capsuleCollider2D;
     public ContactFilter2D cast;
-    public float groundDistance = -1.5F;
+    public float groundDistance = 0.1F;
     RaycastHit2D[] raycastHit2D = new RaycastHit2D[5];
     public bool isGrounded = false;
 
@@ -21,7 +21,7 @@ public class GroundCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position, transform.forward, Color.green);
+       // Debug.DrawRay(transform.position, transform.forward, Color.green);
     }
 
     void FixedUpdate()
