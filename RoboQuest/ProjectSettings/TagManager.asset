@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Interaction
   - Planet
-  - Trigger
+  - FreeJumpZone
   layers:
   - Default
   - TransparentFX
