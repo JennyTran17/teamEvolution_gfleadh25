@@ -9,9 +9,10 @@ public abstract class GeneralInteraction : MonoBehaviour, Interactable
     
     private InputAction interactAction;
 
-    [SerializeField] private SpriteRenderer interactSprite;
+    [SerializeField] public SpriteRenderer interactSprite;
 
     public Transform _playerTransform;
+    
     private const float INTERACT_DISTANCE = 3F;
     private PlayerInput playerInput;
 
@@ -27,6 +28,8 @@ public abstract class GeneralInteraction : MonoBehaviour, Interactable
         
         // call Interact function
         Interact();
+        Debug.Log("interact called");
+        
         Debug.Log("Enter was pressed - NPC Interaction Triggered");
     }
 
