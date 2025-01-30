@@ -6,7 +6,6 @@ public class ScriptableObj : ScriptableObject
 {
   public float health;
   public int kills;
-  public List<string> collectables;
 
 
 }
