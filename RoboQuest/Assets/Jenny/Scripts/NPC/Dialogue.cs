@@ -1,18 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-using System;
+using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
     public GameObject dialogueBox;
     public TextMeshProUGUI textDisplay;
-    public string[] sentences;
-    private int index;
+    public string[] sentences; // Initial dialogue sentences
+    public string[] nextSentences; // Dialogue sentences after
+    public int index;
     public float typingSpeed;
 
     public GameObject continueButton;
+
     void Start()
     {
         dialogueBox.SetActive(false);
@@ -21,22 +21,19 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
-        if(textDisplay.text == sentences[index])
+        if (textDisplay.text == sentences[index])
         {
             continueButton.SetActive(true);
-            
         }
     }
-    IEnumerator Type()
-    {
 
+    public IEnumerator Type()
+    {
         foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-        
-
     }
 
     public void NextSentence()
@@ -45,7 +42,7 @@ public class Dialogue : MonoBehaviour
         if (index < sentences.Length - 1)
         {
             index++;
-            textDisplay.text = ""; 
+            textDisplay.text = "";
             StartCoroutine(Type());
         }
         else

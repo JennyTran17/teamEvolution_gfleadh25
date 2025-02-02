@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,10 @@ using UnityEngine.InputSystem;
 public class NPC_Manager : MonoBehaviour
 {
     
-    Animator npcAnimator;
+    public Animator npcAnimator;
+    public PlayerInventory playerInventory;
+    private const float INTERACT_DISTANCE = 3.5F;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +20,7 @@ public class NPC_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.hKey.wasPressedThisFrame)// need to change code
+        if (Vector2.Distance(playerInventory.transform.position, transform.position) < INTERACT_DISTANCE && playerInventory.hasBattery)
         {
             npcAnimator.SetTrigger("wake");
             StartCoroutine(ChangeAnimation(3));
@@ -28,5 +32,6 @@ public class NPC_Manager : MonoBehaviour
         //Wait a few seconds before running the next line of code
         yield return new WaitForSeconds(time);
         npcAnimator.SetBool("newIdle", true);
+        
     }
 }

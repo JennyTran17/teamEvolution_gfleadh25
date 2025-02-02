@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Interaction
   - Planet
   - FreeJumpZone
+  - SecretExit
+  - Collectables
   layers:
   - Default
   - TransparentFX

@@ -676,7 +676,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 304480226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb8abdcc9aa158c4b899647ac40c2fc0, type: 3}
+  m_Script: {fileID: 11500000, guid: 18ccb0ccb1402094084df21c69587161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactSprite: {fileID: 555519113}
@@ -1021,7 +1021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &555519112
 Transform:
   m_ObjectHideFlags: 0
@@ -6470,7 +6470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1324648707}
   - component: {fileID: 1324648709}
-  - component: {fileID: 1324648708}
+  - component: {fileID: 1324648710}
   m_Layer: 0
   m_Name: Station
   m_TagString: Untagged
@@ -6494,20 +6494,6 @@ Transform:
   - {fileID: 1403371217}
   m_Father: {fileID: 1324473122}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 139}
---- !u!114 &1324648708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324648706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb8abdcc9aa158c4b899647ac40c2fc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactSprite: {fileID: 1403371218}
-  _playerTransform: {fileID: 2051128808}
 --- !u!212 &1324648709
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6560,6 +6546,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1324648710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324648706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ccb0ccb1402094084df21c69587161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactSprite: {fileID: 1403371218}
+  _playerTransform: {fileID: 2051128808}
 --- !u!1 &1403371216
 GameObject:
   m_ObjectHideFlags: 0
@@ -6576,7 +6576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1403371217
 Transform:
   m_ObjectHideFlags: 0
@@ -7257,9 +7257,9 @@ MonoBehaviour:
   jumpImpulse: 7
   groundCheck: {fileID: 2051128813}
   rb: {fileID: 2051128809}
+  secretExit: {fileID: 0}
   allowFreeJump: 0
   freeJumpForce: 7
-  playerData: {fileID: 11400000, guid: e17f7cfe6eb101340a1efc3dbfc3a734, type: 2}
 --- !u!114 &2051128813
 MonoBehaviour:
   m_ObjectHideFlags: 0

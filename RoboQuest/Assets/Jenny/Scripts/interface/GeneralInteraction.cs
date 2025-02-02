@@ -11,7 +11,7 @@ public abstract class GeneralInteraction : MonoBehaviour, Interactable
     public Transform _playerTransform;
     
     
-    private const float INTERACT_DISTANCE = 3F;
+    private const float INTERACT_DISTANCE = 3.5F;
  
 
     void Update()

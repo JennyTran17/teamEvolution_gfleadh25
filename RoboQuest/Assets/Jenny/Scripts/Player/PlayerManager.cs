@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -14,23 +15,40 @@ public class PlayerManager : MonoBehaviour
     public GroundCheck groundCheck;
     public Rigidbody2D rb;
     private GameObject planet;
+    public GameObject secretExit; //cave room
     Scene scene;
 
     public bool allowFreeJump = false; // Toggle free jumping
     public float freeJumpForce = 7f;   //Force for free jumping
 
-    public ScriptableObj playerData;
+    //secret exit implementation
+    private string[] correctSequence = { "W", "E", "W", "W", "E", "E", "W", "E", "W", "E" }; // Correct sequence
+    private List<string> playerSequence = new List<string>(); // Tracks the player's moves
+
 
     private void Start()
     {
         scene = SceneManager.GetActiveScene();
         rb = gameObject.GetComponent<Rigidbody2D>();
-        if(planet == null && scene.name.Equals("Main Level") )
+        if (planet == null && scene.name.Equals("Main Level"))
         {
             planet = GameObject.FindGameObjectWithTag("Planet");
         }
-       
-        
+        if(secretExit == null && scene.name.Equals("Cave"))
+        {
+            secretExit = GameObject.FindGameObjectWithTag("SecretExit");
+            secretExit.SetActive(false);
+            
+        }
+   
+    }
+    private void Update()
+    {
+        if (scene.name.Equals("Cave"))
+        {
+            HandleInput();
+        }
+
     }
 
     void OnMove(InputValue movePosition)
@@ -90,7 +108,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    // NEW: Detect when player exits the free jump area
+    //Detect when player exits the free jump area
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("FreeJumpZone"))
@@ -98,5 +116,49 @@ public class PlayerManager : MonoBehaviour
             allowFreeJump = false;
         }
     }
+    //Secret Exit Implementation
+    void HandleInput()
+    {
+        if (Keyboard.current.aKey.wasPressedThisFrame || Keyboard.current.leftArrowKey.wasPressedThisFrame) // Left
+        {
+            playerSequence.Add("W");
+            CheckSequence();
+        }
+        else if (Keyboard.current.dKey.wasPressedThisFrame || Keyboard.current.rightArrowKey.wasPressedThisFrame) // Right
+        {
+            playerSequence.Add("E");
+            CheckSequence();
+        }
+    }
+
+    void CheckSequence()
+    {
+        // Index to track progress through the correct sequence
+        int correctSequenceIndex = 0;
+
+        // Loop through the player's sequence
+        for (int i = 0; i < playerSequence.Count; i++)
+        {
+            // If the current player input matches the expected input in the correct sequence
+            if (playerSequence[i] == correctSequence[correctSequenceIndex])
+            {
+                correctSequenceIndex++; // Move to the next expected input in the correct sequence
+
+                // If the entire correct sequence has been matched
+                if (correctSequenceIndex == correctSequence.Length)
+                {
+                    Debug.Log("Correct sequence! Exit unlocked.");
+                    secretExit.SetActive(true);
+                    playerSequence.Clear(); // Optionally clear the sequence after success
+                    return;
+                }
+            }
+        }
+
+
+    }
+
 
 }
+
+
