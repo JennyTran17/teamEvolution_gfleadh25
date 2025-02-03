@@ -1,11 +1,14 @@
 using System.IO;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private string saveLocation;
+    private InventoryController inventoryController;
+    private GameObject player;
 
     private void Awake()
     {
@@ -19,58 +22,64 @@ public class GameManager : MonoBehaviour
 
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
 
-        // Automatically load game data when the game starts
-        LoadGame();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
     }
 
-    // Async Save Method
+    //private void Start()
+    //{
+    //    inventoryController = FindObjectOfType<InventoryController>();
+    //    player = GameObject.FindGameObjectWithTag("Player");
+    //    LoadGame();
+    //}
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Scene Loaded: " + scene.name);
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        inventoryController = FindObjectOfType<InventoryController>();
+
+        if (player == null) Debug.LogWarning("Player not found in new scene!");
+        if (inventoryController == null) Debug.LogWarning("InventoryController not found in new scene!");
+
+        LoadGame(); // Load the saved data into the new objects
+    }
+
     public async void SaveGame()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-        if (player == null)
+        if (player == null || inventoryController == null)
         {
-            Debug.LogWarning("SaveGame: Player not found, skipping save.");
-            return; // Prevents the error when stopping play mode
+            Debug.LogError("SaveGame failed: Missing player or inventory reference!");
+            return;
         }
 
         SaveData saveData = new SaveData
         {
-            playerPosition = player.transform.position
+            playerPosition = player.transform.position,
+            inventorySaveData = inventoryController.GetInventoryItems()
         };
 
         string json = JsonUtility.ToJson(saveData);
         await File.WriteAllTextAsync(saveLocation, json);
-
         Debug.Log("Game Saved Successfully!");
     }
 
-
-    // Async Load Method
     public async void LoadGame()
     {
         if (File.Exists(saveLocation))
         {
             string json = await File.ReadAllTextAsync(saveLocation);
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
-            GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPosition;
+
+            player.transform.position = saveData.playerPosition;
+
+            inventoryController.SetInventoryItems(saveData.inventorySaveData);
         }
     }
 
-    // Auto-save when quitting
     private void OnApplicationQuit()
     {
-        SaveGame();
-    }
-
-    // Auto-save when scene changes
-    private void OnDestroy()
-    {
-        SaveGame();
-    }
-
-    private void Update()
-    {
-        Debug.Log(Application.persistentDataPath);
+        SaveGame(); // Save before quitting
     }
 }
