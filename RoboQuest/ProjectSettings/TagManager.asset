@@ -8,6 +8,7 @@ TagManager:
   - Planet
   - FreeJumpZone
   - Activator
+  - fallingobj
   layers:
   - Default
   - TransparentFX

@@ -17,14 +17,17 @@ public class NoteObject : MonoBehaviour
     {
         if (Keyboard.current.fKey.wasPressedThisFrame) 
         {
-            gameObject.SetActive(false);
-        
+            if (canbepressed)
+            {
+                gameObject.SetActive(false);
+                GameManager.instance.NoteHit();//calls method from game manager
+            }
         }
         
     }
     private void OnTriggerEnter2D(Collider2D other)
     {//if the player collides with the buttons make them pressable
-        if (other.tag == "Player") 
+        if (other.tag == "fallingobj") 
         {
             canbepressed = true;
         
@@ -32,10 +35,10 @@ public class NoteObject : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "fallingobj")
         {
             canbepressed = false;
-
+            GameManager.instance.NoteMissed();
         }
 
     }
