@@ -4,20 +4,34 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    private InventoryController inventoryController;
     public bool hasBattery = false;
-    public List<GameObject> inventory = new List<GameObject>();
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void Start()
     {
-        if(collision.gameObject.tag.Equals("Collectables"))
+        inventoryController = FindObjectOfType<InventoryController>();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Collectables"))
         {
-            inventory.Add(collision.gameObject);
-            if(collision.gameObject.name.Equals("Battery"))
+            if (collision.gameObject.name.Equals("Battery"))
             {
                 hasBattery = true;
             }
-            Debug.Log(collision.gameObject.name + " is added to inventory");
-            Destroy(collision.gameObject);
+
+            Item item = collision.gameObject.GetComponent<Item>();
+            if (item != null)
+            {
+                //add item inventory
+                bool itemAdded = inventoryController.AddItem(collision.gameObject);
+                if (itemAdded)
+                {
+                    Destroy(collision.gameObject);
+                }
+
+            }
 
         }
     }
@@ -28,3 +42,5 @@ public class PlayerInventory : MonoBehaviour
         Debug.Log("Battery collected!");
     }
 }
+
+

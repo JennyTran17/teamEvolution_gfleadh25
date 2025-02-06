@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour
     public float freeJumpForce = 7f;   //Force for free jumping
 
     //secret exit implementation
-    private string[] correctSequence = { "W", "E", "W", "W", "E", "E", "W", "E", "W", "E" }; // Correct sequence
+    private string[] correctSequence = { "E", "E", "E", "W", "E", "E", "W", "W", "W", "E" }; // Correct sequence
     private List<string> playerSequence = new List<string>(); // Tracks the player's moves
 
 

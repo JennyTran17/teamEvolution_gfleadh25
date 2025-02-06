@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -25,13 +26,6 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
 
     }
-
-    //private void Start()
-    //{
-    //    inventoryController = FindObjectOfType<InventoryController>();
-    //    player = GameObject.FindGameObjectWithTag("Player");
-    //    LoadGame();
-    //}
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -65,16 +59,48 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Saved Successfully!");
     }
 
-    public async void LoadGame()
+    public async void LoadGame() 
     {
+        //check if json file list have the item ID in the inventory, delete the game object in hierarchy
         if (File.Exists(saveLocation))
         {
             string json = await File.ReadAllTextAsync(saveLocation);
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
+            RemoveCollectedItemsFromScene(saveData.inventorySaveData);
 
             player.transform.position = saveData.playerPosition;
 
             inventoryController.SetInventoryItems(saveData.inventorySaveData);
+            
+            
+        }
+        else
+        {
+            inventoryController.initialSetUp();
+            SaveGame();
+        }
+
+    }
+
+    private void RemoveCollectedItemsFromScene(List<InventorySaveData> savedInventory)
+    {
+        GameObject[] collectables = GameObject.FindGameObjectsWithTag("Collectables");
+
+        foreach (GameObject obj in collectables)
+        {
+            Item item = obj.GetComponent<Item>();
+            if (item != null)
+            {
+                foreach (InventorySaveData savedItem in savedInventory)
+                {
+                    if (item.ID == savedItem.itemID)
+                    {
+                        Debug.Log($"Destroying collected item: {obj.name} (ID: {item.ID})");
+                        Destroy(obj);
+                        break; // Stop checking once a match is found
+                    }
+                }
+            }
         }
     }
 
