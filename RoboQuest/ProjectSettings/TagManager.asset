@@ -9,6 +9,10 @@ TagManager:
   - FreeJumpZone
   - Activator
   - fallingobj
+  - bluearrow
+  - yellowarrow
+  - greenarrow
+  - redarrow
   layers:
   - Default
   - TransparentFX

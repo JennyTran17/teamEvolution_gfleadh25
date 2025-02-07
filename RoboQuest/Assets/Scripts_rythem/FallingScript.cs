@@ -11,7 +11,8 @@ public class FallingScript : MonoBehaviour
     void Start()
     {// set the speed of the falling objects
         beatTempo = beatTempo / 60f;
-        
+        Debug.Log("Press space key to start");
+
     }
 
     // Update is called once per frame
@@ -19,7 +20,7 @@ public class FallingScript : MonoBehaviour
     {
         if (!hasStarted)
         {
-            Debug.Log("Press space key to start");
+            
             //press space key to start game
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {

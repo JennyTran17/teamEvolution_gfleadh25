@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GameManager : MonoBehaviour
+public class GameRhythm : MonoBehaviour
 {// note tempo is 126.4
     public AudioSource theMusic;
     public bool startPlaynig = false;
-    public static GameManager instance;// prevents multple instances of the scripts
+    public static GameRhythm instance;// prevents multple instances of the scripts
     public FallingScript theBS;
 
     // Start is called before the first frame update
