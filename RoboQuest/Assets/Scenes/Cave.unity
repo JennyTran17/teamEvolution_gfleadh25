@@ -2275,8 +2275,8 @@ GameObject:
   - component: {fileID: 994115803}
   - component: {fileID: 994115805}
   - component: {fileID: 994115804}
-  - component: {fileID: 994115807}
   - component: {fileID: 994115806}
+  - component: {fileID: 994115807}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2482,11 +2482,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 994115800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f572c022db93646a2093752da3ca81, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e1481b00442b134cadc8e20284e057f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
-  playerSpeed: 11
+  playerSpeed: 5
   jumpImpulse: 7
   groundCheck: {fileID: 994115805}
   rb: {fileID: 994115806}
@@ -2828,7 +2828,7 @@ SortingGroup:
   m_GameObject: {fileID: 1036968678}
   m_Enabled: 1
   m_SortingLayerID: 691194429
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
 --- !u!253 &1036968686
