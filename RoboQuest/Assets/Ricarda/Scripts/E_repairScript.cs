@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class repairScript : GeneralInteraction
+public class E_repairScript : GeneralInteraction
 {
-    private Dialogue dialogue;
-
 
     public override void Interact()
     {
-        //SceneManager.LoadScene("Sliding Puzzle", LoadSceneMode.Additive);
-
+        SceneManager.LoadSceneAsync("Control Puzzle");
     }
 }
+

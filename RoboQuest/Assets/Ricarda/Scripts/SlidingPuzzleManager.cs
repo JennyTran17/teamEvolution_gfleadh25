@@ -60,7 +60,7 @@ public class SlidingPuzzleManager : MonoBehaviour
     void Start()
     {
         pieces = new List<Transform>();
-        size = 3;
+        size = 2;
         CreateGamePieces(0.01f);
 
         Shuffle();
@@ -89,7 +89,10 @@ public class SlidingPuzzleManager : MonoBehaviour
 
                 }
 
-                CheckCompletion();
+                if (CheckCompletion())
+                {
+                    SceneManager.LoadSceneAsync("Ship");
+                }
             }
 
         }
