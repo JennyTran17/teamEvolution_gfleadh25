@@ -5,7 +5,10 @@ using UnityEngine.InputSystem;
 
 public class NoteObject : MonoBehaviour
 {
-    public bool canbepressed;
+    public GameObject hitEffect;
+
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,66 +18,33 @@ public class NoteObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.fKey.wasPressedThisFrame)
-        {
-            //    if (canbepressed)
-            //    {
-
-            //        //GameManager.instance.NoteHit();//calls method from game manager
-            //    }
-            Debug.Log("The F key was pressed");
-        }
+        
 
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {//if the object collides with the buttons make them pressable
-        if (other.gameObject.tag == "bluearrow")
+        if (other.gameObject.tag == "bluearrow" || other.gameObject.tag == "redarrow" || other.gameObject.tag == "yellowarrow" || other.gameObject.tag == "greenarrow")
         {
             //canbepressed = true;
             Destroy(other.gameObject);
+            //gameObject.SetActive(false);
             Debug.Log("Delete blue arrow");
+            GameRhythm.instance.NoteHit();
+
+            Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
 
         }
-        else if (other.tag == "redarrow")
-        {
-            canbepressed = true;
-
-        }
-        else if (other.tag == "yellowarrow")
-        {
-            canbepressed = true;
-
-        }
-        else if (other.tag == "greenarrow")
-        {
-            canbepressed = true;
-
-        }
+        
     }
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnCollisionExit2D(Collider2D other)
     {
-        if (other.tag == "bluearrow")
+        if (other.tag == "bluearrow" || other.tag == "redarrow" || other.tag == "yellowarrow" || other.tag == "greenarrow")
         {
-            canbepressed = false;
+            
             GameRhythm.instance.NoteMissed();
         }
-        else if (other.tag == "redarrow")
-        {
-            canbepressed = false;
-            GameRhythm.instance.NoteMissed();
-        }
-        else if (other.tag == "yellowarrow")
-        {
-            canbepressed = false;
-            GameRhythm.instance.NoteMissed();
-        }
-        if (other.tag == "greenarrow")
-        {
-            canbepressed = false;
-            GameRhythm.instance.NoteMissed();
-
-        }
-
+        
+       
     }
 }
 
