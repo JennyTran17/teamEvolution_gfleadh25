@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour
     public float freeJumpForce = 7f;   //Force for free jumping
 
     //secret exit implementation
-    private string[] correctSequence = { "E", "E", "E", "W", "E", "E", "W", "W", "W", "E" }; // Correct sequence
+    private string[] correctSequence = { "R", "R", "U", "L", "U", "R", "L", "L", "U", "R" }; // Correct sequence
     private List<string> playerSequence = new List<string>(); // Tracks the player's moves
 
 
@@ -121,12 +121,17 @@ public class PlayerManager : MonoBehaviour
     {
         if (Keyboard.current.aKey.wasPressedThisFrame || Keyboard.current.leftArrowKey.wasPressedThisFrame) // Left
         {
-            playerSequence.Add("W");
+            playerSequence.Add("L");
             CheckSequence();
         }
         else if (Keyboard.current.dKey.wasPressedThisFrame || Keyboard.current.rightArrowKey.wasPressedThisFrame) // Right
         {
-            playerSequence.Add("E");
+            playerSequence.Add("R");
+            CheckSequence();
+        }
+        else if (Keyboard.current.spaceKey.wasPressedThisFrame) // Up
+        {
+            playerSequence.Add("U");
             CheckSequence();
         }
     }

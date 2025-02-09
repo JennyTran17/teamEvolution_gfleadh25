@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private string saveLocation;
     private InventoryController inventoryController;
     private GameObject player;
-
+    private SaveData saveData = new SaveData();//
     private void Awake()
     {
         if (Instance != null)
@@ -48,11 +48,16 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        SaveData saveData = new SaveData
-        {
-            playerPosition = player.transform.position,
-            inventorySaveData = inventoryController.GetInventoryItems()
-        };
+        //SaveData saveData = new SaveData
+        //{
+        //    playerPosition = player.transform.position,
+        //    inventorySaveData = inventoryController.GetInventoryItems()
+
+        //};
+
+        saveData.playerPosition = player.transform.position;
+        saveData.inventorySaveData = inventoryController.GetInventoryItems();
+
 
         string json = JsonUtility.ToJson(saveData);
         await File.WriteAllTextAsync(saveLocation, json);
@@ -61,17 +66,18 @@ public class GameManager : MonoBehaviour
 
     public async void LoadGame() 
     {
-        //check if json file list have the item ID in the inventory, delete the game object in hierarchy
+       
         if (File.Exists(saveLocation))
         {
             string json = await File.ReadAllTextAsync(saveLocation);
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
-            RemoveCollectedItemsFromScene(saveData.inventorySaveData);
+            this.saveData.collectedObjID = saveData.collectedObjID;// ensure loaded data is assigned properly
+            RemoveCollectedItemsFromScene(saveData.inventorySaveData);  //check if json file list have the item ID in the inventory, delete the game object in hierarchy
 
             player.transform.position = saveData.playerPosition;
 
             inventoryController.SetInventoryItems(saveData.inventorySaveData);
-            
+           // RespawnDroppedItems();
             
         }
         else
@@ -89,20 +95,65 @@ public class GameManager : MonoBehaviour
         foreach (GameObject obj in collectables)
         {
             Item item = obj.GetComponent<Item>();
-            if (item != null)
+            if (item != null )
             {
-                foreach (InventorySaveData savedItem in savedInventory)
+                //foreach (InventorySaveData savedItem in savedInventory)
+                //{
+                //    if (item.ID == savedItem.itemID)
+                //    {
+                //        Debug.Log($"Destroying collected item: {obj.name} (ID: {item.ID})");
+                //        Destroy(obj);
+                //        break; // Stop checking once a match is found
+                //    }
+                //}
+
+                foreach (int id in saveData.collectedObjID)
                 {
-                    if (item.ID == savedItem.itemID)
+                    if (item.ID == id)
                     {
                         Debug.Log($"Destroying collected item: {obj.name} (ID: {item.ID})");
                         Destroy(obj);
                         break; // Stop checking once a match is found
                     }
                 }
+
+
             }
         }
     }
+
+    //ensure the item collected is never respawn to the world once collected
+    public void isCollected(int id)
+    {
+        if(!saveData.collectedObjID.Contains(id))
+        {
+            saveData.collectedObjID.Add(id);
+            SaveGame();
+        }
+    }
+
+    //public void SaveDroppedItem(int itemID, Vector3 position)
+    //{
+    //    DropItemData newItem = new DropItemData(itemID, position);
+    //    saveData.droppedItems.Add(newItem);
+    //    SaveGame();
+    //}
+
+    //private void RespawnDroppedItems()
+    //{
+    //    foreach (DropItemData droppedItem in saveData.droppedItems)
+    //    {
+    //        GameObject itemObject = Instantiate(itemPrefab, droppedItem.position, Quaternion.identity);
+    //        Item itemComponent = itemObject.GetComponent<Item>();
+    //        itemComponent.ID = droppedItem.itemID;
+    //    }
+    //}
+
+    //public void RemoveDroppedItem(int itemID, Vector3 position)
+    //{
+    //    saveData.droppedItems.RemoveAll(item => item.itemID == itemID && item.position == position);
+    //    SaveGame();
+    //}
 
     private void OnApplicationQuit()
     {

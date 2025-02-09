@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using static UnityEditor.Progress;
 
 public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -123,10 +124,13 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         Vector2 dropPosition = targetTransform.position;
         Debug.Log(dropPosition);
-       
-        //Instantiate drop item
         Instantiate(gameObject, dropPosition, Quaternion.identity);
-         //Destroy UI one
+
+        //Instantiate drop item
+        //GameObject dropItem = Instantiate(gameObject, dropPosition, Quaternion.identity);
+        //Item itemComponent = dropItem.GetComponent<Item>();
+        //GameManager.Instance.SaveDroppedItem(itemComponent.ID, dropPosition);
+        //Destroy UI one
         Destroy(gameObject);
         
 

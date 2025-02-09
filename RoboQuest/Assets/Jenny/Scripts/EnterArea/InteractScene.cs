@@ -10,17 +10,19 @@ public class InteractScene : GeneralInteraction
         GameManager manager = FindObjectOfType<GameManager>();
         if (gameObject.name.Equals("Station") && IsWithinInteractDistance())
         {
+            manager.SaveGame();
             Debug.Log("enter scene station");
         }
         else if(gameObject.name.Equals("Ship") && IsWithinInteractDistance())
         {
+            manager.SaveGame();
             Debug.Log("enter scene ship");
         }
-        else if(gameObject.name.Equals("caveTest") && IsWithinInteractDistance())
+        else if(gameObject.name.Equals("Choir Passage") && IsWithinInteractDistance())
         {
             
             manager.SaveGame(); //save before load different scene
-            SceneManager.LoadScene("caveTest");
+           // SceneManager.LoadScene("Passage");
         }
 
     }
