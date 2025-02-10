@@ -124,12 +124,13 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         Vector2 dropPosition = targetTransform.position;
         Debug.Log(dropPosition);
-        Instantiate(gameObject, dropPosition, Quaternion.identity);
+        //Instantiate(gameObject, dropPosition, Quaternion.identity);
 
         //Instantiate drop item
-        //GameObject dropItem = Instantiate(gameObject, dropPosition, Quaternion.identity);
-        //Item itemComponent = dropItem.GetComponent<Item>();
-        //GameManager.Instance.SaveDroppedItem(itemComponent.ID, dropPosition);
+        GameObject dropItem = Instantiate(gameObject, dropPosition, Quaternion.identity);
+        Item itemComponent = dropItem.GetComponent<Item>();
+        GameManager.Instance.SaveDroppedItem(itemComponent.ID, dropPosition);
+
         //Destroy UI one
         Destroy(gameObject);
         

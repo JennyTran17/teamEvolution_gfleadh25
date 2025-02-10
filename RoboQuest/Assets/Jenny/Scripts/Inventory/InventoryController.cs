@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
@@ -127,6 +128,22 @@ public class InventoryController : MonoBehaviour
                 }
             }
            
+        }
+    }
+
+    public void SetDropItem(List<DropItemController> dropItem)
+    {
+        foreach(DropItemController itemData in dropItem)
+        {
+            GameObject itemPrefab = itemDictionary.GetItemPrefab(itemData.itemID);
+            if (itemPrefab != null)
+            {
+                GameObject itemObject = Instantiate(itemPrefab, itemData.position, Quaternion.identity);
+                Debug.Log(itemPrefab);
+                //Item itemComponent = itemObject.GetComponent<Item>();
+                //itemComponent.ID = itemData.itemID;
+            }
+
         }
     }
 

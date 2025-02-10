@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
             player.transform.position = saveData.playerPosition;
 
             inventoryController.SetInventoryItems(saveData.inventorySaveData);
-           // RespawnDroppedItems();
+            inventoryController.SetDropItem(saveData.droppedItems);
             
         }
         else
@@ -117,7 +117,6 @@ public class GameManager : MonoBehaviour
                     }
                 }
 
-
             }
         }
     }
@@ -132,28 +131,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //public void SaveDroppedItem(int itemID, Vector3 position)
-    //{
-    //    DropItemData newItem = new DropItemData(itemID, position);
-    //    saveData.droppedItems.Add(newItem);
-    //    SaveGame();
-    //}
+    public void SaveDroppedItem(int itemID, Vector3 position)
+    {
+        DropItemController newItem = new DropItemController(itemID, position);
+        saveData.droppedItems.Add(newItem);
+        SaveGame();
+    }
 
-    //private void RespawnDroppedItems()
-    //{
-    //    foreach (DropItemData droppedItem in saveData.droppedItems)
-    //    {
-    //        GameObject itemObject = Instantiate(itemPrefab, droppedItem.position, Quaternion.identity);
-    //        Item itemComponent = itemObject.GetComponent<Item>();
-    //        itemComponent.ID = droppedItem.itemID;
-    //    }
-    //}
 
-    //public void RemoveDroppedItem(int itemID, Vector3 position)
-    //{
-    //    saveData.droppedItems.RemoveAll(item => item.itemID == itemID && item.position == position);
-    //    SaveGame();
-    //}
+    public void RemoveDroppedItem(int itemID, Vector3 position)
+    {
+        saveData.droppedItems.RemoveAll(item => item.itemID == itemID && item.position == position);
+        SaveGame();
+    }
 
     private void OnApplicationQuit()
     {

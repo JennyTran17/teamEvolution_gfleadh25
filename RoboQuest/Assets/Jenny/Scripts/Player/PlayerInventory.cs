@@ -27,7 +27,7 @@ public class PlayerInventory : MonoBehaviour
                 //add item inventory
                 bool itemAdded = inventoryController.AddItem(collision.gameObject);
                 GameManager.Instance.isCollected(item.ID); //
-               // GameManager.Instance.RemoveDroppedItem(item.ID, item.transform.position); //
+                GameManager.Instance.RemoveDroppedItem(item.ID, item.transform.position); //
                 if (itemAdded)
                 {
                     Destroy(collision.gameObject);
