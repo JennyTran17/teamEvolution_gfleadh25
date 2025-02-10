@@ -38,17 +38,17 @@ public class PlayerManager : MonoBehaviour
         {
             secretExit = GameObject.FindGameObjectWithTag("SecretExit");
             secretExit.SetActive(false);
-            
-        }
-   
+        
+    }
+
     }
     private void Update()
     {
         if (scene.name.Equals("Cave"))
-        {
+    {
             HandleInput();
         }
-
+       
     }
 
     void OnMove(InputValue movePosition)
@@ -128,7 +128,7 @@ public class PlayerManager : MonoBehaviour
         {
             playerSequence.Add("R");
             CheckSequence();
-        }
+    }
         else if (Keyboard.current.spaceKey.wasPressedThisFrame) // Up
         {
             playerSequence.Add("U");
@@ -161,7 +161,7 @@ public class PlayerManager : MonoBehaviour
         }
 
 
-    }
+}
 
 
 }
