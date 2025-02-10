@@ -16,7 +16,7 @@ public class fuelPointScript : GeneralInteraction
         }
         else
         {
-            Debug.Log("Need Fuel");
+            Debug.Log("Fuel Needed!");
         }
         
     }

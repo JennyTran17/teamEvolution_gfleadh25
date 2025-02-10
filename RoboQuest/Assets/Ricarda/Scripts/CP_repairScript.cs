@@ -6,8 +6,18 @@ using UnityEngine.SceneManagement;
 public class CP_repairScript : GeneralInteraction
 {
 
+    public bool hasWires = false;
+
     public override void Interact()
     {
-        SceneManager.LoadSceneAsync("Control Puzzle");
+
+        if (hasWires)
+        {
+            SceneManager.LoadSceneAsync("Control Panel Puzzle");
+        }
+        else
+        {
+            Debug.Log("Wires Needed!");
+        }
     }
 }

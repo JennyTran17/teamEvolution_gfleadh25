@@ -6,9 +6,19 @@ using UnityEngine.SceneManagement;
 public class E_repairScript : GeneralInteraction
 {
 
+    public bool hasSpareParts = false;
+
     public override void Interact()
     {
-        SceneManager.LoadSceneAsync("Control Puzzle");
+
+        if (hasSpareParts)
+        {
+            SceneManager.LoadSceneAsync("Engine Puzzle");
+        }
+        else
+        {
+            Debug.Log("Spare Parts Needed!");
+        }
     }
 }
 
