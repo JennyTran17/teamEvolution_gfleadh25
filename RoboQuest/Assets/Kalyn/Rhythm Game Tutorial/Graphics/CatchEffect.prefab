@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2003034031937760307}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -147.58519, y: -105.85205, z: -6.652895}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4899,7 +4899,7 @@ GameObject:
   - component: {fileID: 121140862440903105}
   m_Layer: 0
   m_Name: CatchEffect
-  m_TagString: Untagged
+  m_TagString: effect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,6 +10,7 @@ public class GameRhythm : MonoBehaviour
     public bool startPlaynig = false;
     public static GameRhythm instance;// prevents multple instances of the scripts
     public FallingScript theBS;
+    
 
     public int currentScore;
     public int score_perNote;
@@ -17,9 +18,13 @@ public class GameRhythm : MonoBehaviour
     public int currentMultiplyer;
     public int multiplyertracker;
     public int[] multiplyerThresholds;//create an array to use for levels
-
+    public NoteObject noteController;
     public Text ScoreText ;
     public Text Multitext ;
+    public GameObject sparkleEffect;
+
+    public float beatInterval = (60 / 126.4f) * 2f; // Adjust based on song BPM
+    private float nextBeatTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,22 +39,31 @@ public class GameRhythm : MonoBehaviour
     {
         if (!startPlaynig)
         {
+            
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 Debug.Log("Space key pressed!");
                 startPlaynig = true;
                 theBS.hasStarted = true;
-
+                noteController.StartSpawning(); //call spawn arrow- set boolean spawn = true
+                //noteController.createArrow();
                 if (theMusic != null)
                 {
                     theMusic.Play();
-                    Debug.Log("Music Started"); 
+                    Debug.Log("Music Started");
+                   
                 }
                 else
                 {
                     Debug.Log("AudioSource is not assigned!");
                 }
             }
+        }
+
+        if (startPlaynig && Time.time >= nextBeatTime) //Time.time is the gameplay time
+        {
+            noteController.CreateArrow(); // create arrow on beat
+            nextBeatTime = Time.time + beatInterval; // Set next beat time
         }
     }
 
