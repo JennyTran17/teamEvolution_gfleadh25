@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Interaction
   - Planet
+  - FixTarget
+  - SecretExit
   - FreeJumpZone
   - Activator
   - fallingobj
@@ -14,6 +15,7 @@ TagManager:
   - greenarrow
   - redarrow
   - effect
+  - Collectables
   layers:
   - Default
   - TransparentFX
@@ -51,6 +53,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: SortingTexture
-    uniqueID: 691194429
+  - name: SortingLayer
+    uniqueID: 1376682749
     locked: 0
