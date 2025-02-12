@@ -32,6 +32,8 @@ public class GameRhythm : MonoBehaviour
     public Text WinText;// text object to display win 
     public Text LivesText;
     private bool gameOver = false;
+
+    public GameObject Battery;
     // Start is called before the first frame update
     void Start()
     {
@@ -164,13 +166,14 @@ public class GameRhythm : MonoBehaviour
                 WinText.gameObject.SetActive(true);
                 WinText.text = "Power cell Crafted!\nFinal Score: " + currentScore;
 
-
+                Instantiate(Battery, transform.position, Quaternion.identity);
             }
             else if (currentScore < 2000)
             {
                 // Show "Game Over" message
                 GameOverText.gameObject.SetActive(true);
                 GameOverText.text = "Game Over!\nFinal Score: " + currentScore;
+                
             }
 
         }
