@@ -16,6 +16,7 @@ TagManager:
   - redarrow
   - effect
   - Collectables
+  - Spike
   layers:
   - Default
   - TransparentFX
