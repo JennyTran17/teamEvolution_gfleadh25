@@ -8,6 +8,13 @@ TagManager:
   - FixTarget
   - SecretExit
   - FreeJumpZone
+  - Activator
+  - fallingobj
+  - bluearrow
+  - yellowarrow
+  - greenarrow
+  - redarrow
+  - effect
   - Collectables
   layers:
   - Default
