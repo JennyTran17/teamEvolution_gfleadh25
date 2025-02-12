@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class E_repairScript : GeneralInteraction
 {
+    public alertManager alerScript;
 
     public bool hasSpareParts = false;
 
@@ -17,7 +18,8 @@ public class E_repairScript : GeneralInteraction
         }
         else
         {
-            Debug.Log("Spare Parts Needed!");
+            //Debug.Log("Spare Parts Needed!");
+            alerScript.sparePartsNeeded_Alert = true;
         }
     }
 }

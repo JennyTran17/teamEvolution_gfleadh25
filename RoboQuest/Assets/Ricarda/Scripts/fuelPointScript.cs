@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class fuelPointScript : GeneralInteraction
 {
+    public alertManager alerScript;
+
     // placeholder bool
     public bool hasFuel = false;
 
@@ -16,7 +18,8 @@ public class fuelPointScript : GeneralInteraction
         }
         else
         {
-            Debug.Log("Fuel Needed!");
+            //Debug.Log("Fuel Needed!");
+            alerScript.fuelNeeded_Alert = true;
         }
         
     }
