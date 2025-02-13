@@ -22,7 +22,7 @@ public class InteractScene : GeneralInteraction
         {
             
             manager.SaveGame(); //save before load different scene
-           // SceneManager.LoadScene("Passage");
+            SceneManager.LoadScene("Kalyn");
         }
 
     }

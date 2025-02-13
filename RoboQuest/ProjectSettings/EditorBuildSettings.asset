@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cave.unity
     guid: e73a5041752a1d34188c4c0dd79893c2
+  - enabled: 1
+    path: Assets/Scenes/Kalyn.unity
+    guid: a9b72c00ad4194649bfa02f9ea65bbe7
   m_configObjects: {}

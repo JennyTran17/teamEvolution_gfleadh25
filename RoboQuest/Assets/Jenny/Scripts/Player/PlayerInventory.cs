@@ -7,7 +7,6 @@ public class PlayerInventory : MonoBehaviour
 {
     private InventoryController inventoryController;
     public bool hasBattery = false;
-    PlayerManager _player;
 
 
     private void Start()
@@ -18,7 +17,7 @@ public class PlayerInventory : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Collectables") && !_player.scene.name.Equals("Kalyn"))
+        if (collision.gameObject.tag.Equals("Collectables"))
         {
             Item item = collision.gameObject.GetComponent<Item>();
             if (item != null)

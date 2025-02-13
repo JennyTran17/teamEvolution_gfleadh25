@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -24,25 +25,30 @@ public class GameManager : MonoBehaviour
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
 
         SceneManager.sceneLoaded += OnSceneLoaded;
-
+        
+    }
+    private void Start()
+    {
+        StartCoroutine(DelayedLoadGame());
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Scene Loaded: " + scene.name);
+        //Debug.Log("Scene Loaded: " + scene.name);
 
-        player = GameObject.FindGameObjectWithTag("Player");
-        inventoryController = FindObjectOfType<InventoryController>();
+        //player = GameObject.FindGameObjectWithTag("Player");
+        //inventoryController = FindObjectOfType<InventoryController>();
 
-        if (player == null) Debug.LogWarning("Player not found in new scene!");
-        if (inventoryController == null) Debug.LogWarning("InventoryController not found in new scene!");
+        //if (player == null) Debug.LogWarning("Player not found in new scene!");
+        ////if (inventoryController == null) Debug.LogWarning("InventoryController not found in new scene!");
 
-        LoadGame(); // Load the saved data into the new objects
+        //LoadGame(); // Load the saved data into the new objects
+        //StartCoroutine(DelayedLoadGame());
     }
 
     public async void SaveGame()
     {
-        if (player == null || inventoryController == null)
+        if (inventoryController == null)
         {
             Debug.LogError("SaveGame failed: Missing player or inventory reference!");
             return;
@@ -55,7 +61,7 @@ public class GameManager : MonoBehaviour
 
         //};
 
-        saveData.playerPosition = player.transform.position;
+       // saveData.playerPosition = player.transform.position;
         saveData.inventorySaveData = inventoryController.GetInventoryItems();
 
 
@@ -74,7 +80,7 @@ public class GameManager : MonoBehaviour
             this.saveData.collectedObjID = saveData.collectedObjID;// ensure loaded data is assigned properly
             RemoveCollectedItemsFromScene(saveData.inventorySaveData);  //check if json file list have the item ID in the inventory, delete the game object in hierarchy
 
-            player.transform.position = saveData.playerPosition;
+           // player.transform.position = saveData.playerPosition;
 
             inventoryController.SetInventoryItems(saveData.inventorySaveData);
             inventoryController.SetDropItem(saveData.droppedItems);
@@ -148,5 +154,18 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         SaveGame(); // Save before quitting
+    }
+
+    private IEnumerator DelayedLoadGame()
+    {
+        yield return new WaitForSeconds(0.1f); // Allow scene objects to initialize
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        inventoryController = FindObjectOfType<InventoryController>();
+
+        if (player == null) Debug.LogWarning("Player not found in new scene!");
+        if (inventoryController == null) Debug.LogWarning("InventoryController not found in new scene!");
+
+        LoadGame();
     }
 }

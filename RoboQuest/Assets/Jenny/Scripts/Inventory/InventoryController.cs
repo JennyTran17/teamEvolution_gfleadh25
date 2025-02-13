@@ -11,7 +11,11 @@ public class InventoryController : MonoBehaviour
     public int slotCount;
     public GameObject[] itemPrefabs;
 
-  
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(GameObject.Find("Inventory"));
+    }
     private void Start()
     {
         itemDictionary = FindObjectOfType<ItemDictionary>();
