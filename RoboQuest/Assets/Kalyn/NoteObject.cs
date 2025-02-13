@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class NoteObject : MonoBehaviour
 {
-    public GameObject blueArrow;
-    public GameObject redArrow;
-    public GameObject yellowArrow;
-    public GameObject greenArrow;
+    public GameObject crystal1;
+    public GameObject crystal2;
+    public GameObject spike;
+  
 
     private bool canSpawn = false; // Prevent spawning before music starts
 
@@ -21,7 +21,7 @@ public class NoteObject : MonoBehaviour
         if (!canSpawn) return;
 
         Vector3 spawnPosition = new Vector3(Random.Range(-3, 3), Random.Range(12, 15), 0);
-        int randomNumber = Random.Range(0, 4);
+        int randomNumber = Random.Range(0, 3);
 
         GameObject newArrow = null;
 
@@ -29,27 +29,20 @@ public class NoteObject : MonoBehaviour
         {
             case 0:
                 {
-                    newArrow = Instantiate(blueArrow, spawnPosition, Quaternion.identity); 
+                    newArrow = Instantiate(crystal1, spawnPosition, Quaternion.identity); 
                     newArrow.GetComponent<FallingScript>().sparkleEffect = GameRhythm.instance.sparkleEffect; // Assign sparkle effect
                     break;
                 }
             case 1: 
                 { 
-                    newArrow = Instantiate(redArrow, spawnPosition, Quaternion.identity); 
+                    newArrow = Instantiate(crystal2, spawnPosition, Quaternion.identity); 
                     newArrow.GetComponent<FallingScript>().sparkleEffect = GameRhythm.instance.sparkleEffect;
                     break; 
                 }
 
             case 2:
                 {
-                    newArrow = Instantiate(yellowArrow, spawnPosition, Quaternion.identity); 
-                    newArrow.GetComponent<FallingScript>().sparkleEffect = GameRhythm.instance.sparkleEffect; 
-                    break;
-                }
-
-            case 3:
-                {
-                    newArrow = Instantiate(greenArrow, spawnPosition, Quaternion.identity);
+                    newArrow = Instantiate(spike, spawnPosition, Quaternion.identity); 
                     newArrow.GetComponent<FallingScript>().sparkleEffect = GameRhythm.instance.sparkleEffect; 
                     break;
                 }

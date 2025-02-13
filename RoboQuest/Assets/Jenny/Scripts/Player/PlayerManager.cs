@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
     public Rigidbody2D rb;
     private GameObject planet;
     public GameObject secretExit; //cave room
-    Scene scene;
+    public Scene scene;
 
     public bool allowFreeJump = false; // Toggle free jumping
     public float freeJumpForce = 7f;   //Force for free jumping
