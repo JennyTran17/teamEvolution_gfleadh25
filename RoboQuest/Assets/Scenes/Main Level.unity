@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &142651803
 Transform:
   m_ObjectHideFlags: 0
@@ -902,7 +902,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &536956054
 Transform:
   m_ObjectHideFlags: 0
@@ -5982,7 +5982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &716558947
 Transform:
   m_ObjectHideFlags: 0
@@ -7098,8 +7098,6 @@ GameObject:
   - component: {fileID: 2051128808}
   - component: {fileID: 2051128807}
   - component: {fileID: 2051128810}
-  - component: {fileID: 2051128813}
-  - component: {fileID: 2051128812}
   - component: {fileID: 2051128809}
   - component: {fileID: 2051128814}
   - component: {fileID: 2051128815}
@@ -7241,54 +7239,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.000000025781024, y: -0.21626693}
   m_Size: {x: 1.0000004, y: 0.53505313}
   m_Direction: 1
---- !u!114 &2051128812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051128806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e1481b00442b134cadc8e20284e057f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 25
-  playerSpeed: 7
-  jumpImpulse: 5
-  groundCheck: {fileID: 2051128813}
-  rb: {fileID: 2051128809}
-  secretExit: {fileID: 0}
-  allowFreeJump: 0
-  freeJumpForce: 7
---- !u!114 &2051128813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051128806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627c67453fc89af42b13a6a6122cc19c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cast:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  groundDistance: 0.1
-  isGrounded: 0
 --- !u!114 &2051128814
 MonoBehaviour:
   m_ObjectHideFlags: 0
