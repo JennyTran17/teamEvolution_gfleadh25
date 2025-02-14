@@ -7101,6 +7101,8 @@ GameObject:
   - component: {fileID: 2051128809}
   - component: {fileID: 2051128814}
   - component: {fileID: 2051128815}
+  - component: {fileID: 2051128817}
+  - component: {fileID: 2051128816}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -7290,6 +7292,54 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2051128816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051128806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627c67453fc89af42b13a6a6122cc19c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cast:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.5
+  isGrounded: 0
+--- !u!114 &2051128817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051128806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e1481b00442b134cadc8e20284e057f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 20
+  playerSpeed: 5
+  jumpImpulse: 3
+  groundCheck: {fileID: 2051128816}
+  rb: {fileID: 2051128809}
+  secretExit: {fileID: 0}
+  allowFreeJump: 0
+  freeJumpForce: 7
 --- !u!1 &2112692286
 GameObject:
   m_ObjectHideFlags: 0
