@@ -60,9 +60,9 @@ public class alertManager : MonoBehaviour
     IEnumerator displayTimer(int type)
     {
         // wait 5 seconds
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
 
-        // set corresponding bool to false
+       // set corresponding bool to false
         if (type == 0)
         {
             wiresNeeded_Alert = false;
@@ -77,7 +77,7 @@ public class alertManager : MonoBehaviour
         }
 
 
-        // Check if any other alerts are true
+        //// Check if any other alerts are true
         if (wiresNeeded_Alert || fuelNeeded_Alert || sparePartsNeeded_Alert)
         {
             // Do nothing, as there is already another alert being displayed
@@ -88,8 +88,8 @@ public class alertManager : MonoBehaviour
             alertText.color = Color.white;
             alertText.text = " ";
         }
-
-
       
+
+
     }
 }

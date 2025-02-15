@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactSprite: {fileID: 265406387}
   _playerTransform: {fileID: 977399366}
-  alerScript: {fileID: 1890229187}
+  alertScript: {fileID: 1890229187}
   hasSpareParts: 0
 --- !u!212 &11581613
 SpriteRenderer:
@@ -11464,7 +11464,7 @@ MonoBehaviour:
   interactSprite: {fileID: 265406387}
   _playerTransform: {fileID: 977399366}
   hasWires: 0
-  alerScript: {fileID: 1890229187}
+  alertScript: {fileID: 1890229187}
 --- !u!212 &1890572298
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11767,8 +11767,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactSprite: {fileID: 265406387}
   _playerTransform: {fileID: 977399366}
-  alerScript: {fileID: 1890229187}
+  alertScript: {fileID: 1890229187}
   hasFuel: 0
+  fuelNeeded_Alert: 1
 --- !u!212 &2023439188
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11830,7 +11831,7 @@ Transform:
   m_GameObject: {fileID: 2023439186}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.87, y: 1.98, z: 0}
+  m_LocalPosition: {x: -1.39, y: 1.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11928,7 +11929,7 @@ SceneRoots:
   - {fileID: 1890229188}
   - {fileID: 977399366}
   - {fileID: 591209358}
-  - {fileID: 1890572296}
   - {fileID: 1364142297}
+  - {fileID: 1890572296}
   - {fileID: 2023439189}
   - {fileID: 11581614}
