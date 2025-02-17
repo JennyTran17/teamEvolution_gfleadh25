@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     private string saveLocation;
     private InventoryController inventoryController;
     private GameObject player;
-    private SaveData saveData = new SaveData();//
+    public SaveData saveData = new SaveData();//
+    private PlayerInventory playerInventory;
     private void Awake()
     {
         if (Instance != null)
@@ -29,21 +30,15 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(DelayedLoadGame());
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //Debug.Log("Scene Loaded: " + scene.name);
+        StartCoroutine(ApplyPlayerPosition());
 
-        //player = GameObject.FindGameObjectWithTag("Player");
-        //inventoryController = FindObjectOfType<InventoryController>();
 
-        //if (player == null) Debug.LogWarning("Player not found in new scene!");
-        ////if (inventoryController == null) Debug.LogWarning("InventoryController not found in new scene!");
-
-        //LoadGame(); // Load the saved data into the new objects
-        //StartCoroutine(DelayedLoadGame());
     }
 
     public async void SaveGame()
@@ -54,15 +49,14 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        //SaveData saveData = new SaveData
-        //{
-        //    playerPosition = player.transform.position,
-        //    inventorySaveData = inventoryController.GetInventoryItems()
-
-        //};
-
-       // saveData.playerPosition = player.transform.position;
+        
         saveData.inventorySaveData = inventoryController.GetInventoryItems();
+        saveData.hasBattery = true;
+        if (player != null)
+        {
+            PlayerSaveData.Instance.SavePlayerPosition(player.transform.position);
+        }
+
 
 
         string json = JsonUtility.ToJson(saveData);
@@ -85,6 +79,7 @@ public class GameManager : MonoBehaviour
             inventoryController.SetInventoryItems(saveData.inventorySaveData);
             inventoryController.SetDropItem(saveData.droppedItems);
             
+
         }
         else
         {
@@ -103,16 +98,7 @@ public class GameManager : MonoBehaviour
             Item item = obj.GetComponent<Item>();
             if (item != null )
             {
-                //foreach (InventorySaveData savedItem in savedInventory)
-                //{
-                //    if (item.ID == savedItem.itemID)
-                //    {
-                //        Debug.Log($"Destroying collected item: {obj.name} (ID: {item.ID})");
-                //        Destroy(obj);
-                //        break; // Stop checking once a match is found
-                //    }
-                //}
-
+                
                 foreach (int id in saveData.collectedObjID)
                 {
                     if (item.ID == id)
@@ -162,10 +148,45 @@ public class GameManager : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         inventoryController = FindObjectOfType<InventoryController>();
+        playerInventory = FindObjectOfType<PlayerInventory>();
 
         if (player == null) Debug.LogWarning("Player not found in new scene!");
         if (inventoryController == null) Debug.LogWarning("InventoryController not found in new scene!");
 
+        player = GameObject.FindGameObjectWithTag("Player");
+
+       
+
         LoadGame();
+    }
+
+    public void SaveHasBattery()
+    {
+        saveData.hasBattery = true;
+        SaveGame();
+    }
+
+    private IEnumerator ApplyPlayerPosition()
+    {
+        yield return new WaitForEndOfFrame(); // Wait for all objects to be initialized
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            Vector3 savedPosition = PlayerSaveData.Instance.GetSavedPosition();
+            if (savedPosition != Vector3.zero)
+            {
+                player.transform.position = savedPosition;
+                Debug.Log($"Applied saved position: {savedPosition}");
+            }
+            else
+            {
+                Debug.Log("No saved position found for this scene.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Player not found in the scene!");
+        }
     }
 }

@@ -179,6 +179,6 @@ public class GameRhythm : MonoBehaviour
         }
 
 
-        Time.timeScale = 0; // freeze the game
+        //Time.timeScale = 0; // freeze the game
     }
 }

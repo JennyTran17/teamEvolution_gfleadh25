@@ -6,13 +6,12 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     private InventoryController inventoryController;
-    public bool hasBattery = false;
-
+  
+   
 
     private void Start()
     {
         inventoryController = FindObjectOfType<InventoryController>();
-        
        
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,18 +33,19 @@ public class PlayerInventory : MonoBehaviour
             }
 
         }
-        else
+       
+        if (collision.gameObject.name.Equals("Item"))
         {
-            if (collision.gameObject.name.Equals("Battery"))
-            {
-                hasBattery = true;
-            }
+           CollectBattery();
+                
         }
+       
     }
 
     public void CollectBattery()
     {
-        hasBattery = true;
+           
+        GameManager.Instance.SaveHasBattery();
         Debug.Log("Battery collected!");
     }
 }
