@@ -19,7 +19,7 @@ public class InteractNPC : GeneralInteraction
         Debug.Log("Interact function called");
 
         // Check if the player has the coin and if the coin dialogue hasn't been triggered yet
-        if (playerInventory.hasBattery && !hasNextDialogueTriggered)
+        if (GameManager.Instance.saveData.hasBattery && !hasNextDialogueTriggered)
         {
             // Trigger the second dialogue sequence
             dialogue.sentences = dialogue.nextSentences; // Switch to the coin dialogue sentences

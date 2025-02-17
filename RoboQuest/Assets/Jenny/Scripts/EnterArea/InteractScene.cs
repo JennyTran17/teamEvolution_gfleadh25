@@ -22,7 +22,14 @@ public class InteractScene : GeneralInteraction
         {
             
             manager.SaveGame(); //save before load different scene
-           // SceneManager.LoadScene("Passage");
+            SceneManager.LoadScene("Kalyn");
+        }
+        else if (gameObject.name.Equals("Cave") && IsWithinInteractDistance())
+        {
+
+            manager.SaveGame(); //save before load different scene
+            SceneManager.LoadScene("Cave");
+            
         }
 
     }

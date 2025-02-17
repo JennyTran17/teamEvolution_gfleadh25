@@ -33,6 +33,7 @@ public abstract class GeneralInteraction : MonoBehaviour, Interactable
         {
             //turn on the sprite
             interactSprite.gameObject.SetActive(true);
+            GameManager.Instance.SaveGame();
         }
        
     }

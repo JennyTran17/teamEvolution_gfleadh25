@@ -8,7 +8,15 @@ TagManager:
   - FixTarget
   - SecretExit
   - FreeJumpZone
+  - Activator
+  - fallingobj
+  - bluearrow
+  - yellowarrow
+  - greenarrow
+  - redarrow
+  - effect
   - Collectables
+  - Spike
   layers:
   - Default
   - TransparentFX
