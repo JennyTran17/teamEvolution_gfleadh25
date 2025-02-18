@@ -59,22 +59,8 @@ public class alertManager : MonoBehaviour
 
     IEnumerator displayTimer(int type)
     {
-        // wait 5 seconds
+        // wait 2 seconds
         yield return new WaitForSeconds(2);
-
-       // set corresponding bool to false
-        if (type == 0)
-        {
-            wiresNeeded_Alert = false;
-        }
-        else if (type == 1)
-        {
-            fuelNeeded_Alert = false;
-        }
-        else if (type == 2)
-        {
-            sparePartsNeeded_Alert = false;
-        }
 
 
         //// Check if any other alerts are true

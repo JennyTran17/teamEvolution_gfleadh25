@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SlidingPuzzleManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class SlidingPuzzleManager : MonoBehaviour
     private int emptySpace;
     private int size;
     public bool puzzleSolved = false;
+
+    public Button reshuffleButton;
+    private bool initialShuffle = true;
 
     
     private void CreateGamePieces(float gapThickness)
@@ -91,7 +95,7 @@ public class SlidingPuzzleManager : MonoBehaviour
 
                 if (CheckCompletion())
                 {
-                    SceneManager.LoadSceneAsync("Ship");
+                    Exit();
                 }
             }
 
@@ -131,7 +135,7 @@ public class SlidingPuzzleManager : MonoBehaviour
     }
 
     
-    private void Shuffle()
+    public void Shuffle()
     {
         int count = 0;
         int last = 0;
@@ -160,7 +164,34 @@ public class SlidingPuzzleManager : MonoBehaviour
                 count++;
             }
 
+            // Avoid activating reshuffle button cool down on game start shuffle
+            if (initialShuffle)
+            {
+                initialShuffle = false;
+            }
+            else
+            {
+                reshuffleButton.interactable = false;
+                StartCoroutine(shuffleCooldown());
+            }
+
+
+
         }
+    }
+
+
+    public void Exit()
+    {
+        SceneManager.LoadSceneAsync("Ship");
+
+    }
+
+
+    IEnumerator shuffleCooldown()
+    {
+        yield return new WaitForSeconds(15);
+        reshuffleButton.interactable = true;
     }
 
 

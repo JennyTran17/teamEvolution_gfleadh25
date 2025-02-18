@@ -21,7 +21,11 @@ public class E_repairScript : GeneralInteraction
                 alertScript.sparePartsNeeded_Alert = true;
             }
         }
-        
+        else
+        {
+            alertScript.sparePartsNeeded_Alert = false;
+        }
+
 
         if (Keyboard.current.fKey.isPressed && IsWithinInteractDistance())
         {
@@ -32,16 +36,16 @@ public class E_repairScript : GeneralInteraction
     public override void Interact()
     {
 
-        //GameManager manager = FindObjectOfType<GameManager>();
-        //if (gameObject.name.Equals("Engine Repair Point") && IsWithinInteractDistance())
-        //{
-        //    if (hasSpareParts)
-        //    {
-        //        manager.SaveGame();//save game before load different scene
-        //        SceneManager.LoadSceneAsync("Engine Puzzle");//code need to change if load scene additive to load scene on top of scene or call scene load scene active and set others inactive
-        //        Debug.Log("enter engine repair point");
-        //    }
-        //}
+        GameManager manager = FindObjectOfType<GameManager>();
+        if (gameObject.name.Equals("Engine Repair Point") && IsWithinInteractDistance())
+        {
+            if (hasSpareParts)
+            {
+                manager.SaveGame();//save game before load different scene
+                SceneManager.LoadSceneAsync("Engine Puzzle");//code need to change if load scene additive to load scene on top of scene or call scene load scene active and set others inactive
+                Debug.Log("enter engine repair point");
+            }
+        }
     }
 }
 

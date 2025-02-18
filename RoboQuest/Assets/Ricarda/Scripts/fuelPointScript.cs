@@ -24,7 +24,11 @@ public class fuelPointScript : GeneralInteraction
                 alertScript.fuelNeeded_Alert = true;
             }
         }
-       
+        else
+        {
+            alertScript.fuelNeeded_Alert = false;
+        }
+
 
         if (Keyboard.current.fKey.isPressed && IsWithinInteractDistance())
         {
@@ -36,15 +40,16 @@ public class fuelPointScript : GeneralInteraction
     public override void Interact()
     {
 
-        //if (gameObject.name.Equals("Fuel Point") && IsWithinInteractDistance())
-        //{
-        //    if (hasSpareParts)
-        //    {
-        //        manager.SaveGame(); //save game before load different scene
-        //        SceneManager.LoadSceneAsync("Fuel Puzzle"); //code need to change if load scene additive to load scene on top of scene or call scene load scene active and set others inactive
-        //        Debug.Log("enter fuel point");
-        //    }
-        //}
+        GameManager manager = FindObjectOfType<GameManager>();
+        if (gameObject.name.Equals("Fuel Point") && IsWithinInteractDistance())
+        {
+            if (hasFuel)
+            {
+                manager.SaveGame(); //save game before load different scene
+                SceneManager.LoadSceneAsync("Fuel Puzzle"); //code need to change if load scene additive to load scene on top of scene or call scene load scene active and set others inactive
+                Debug.Log("enter fuel point");
+            }
+        }
 
     }
 }
