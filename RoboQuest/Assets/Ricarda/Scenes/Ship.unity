@@ -7984,6 +7984,7 @@ GameObject:
   - component: {fileID: 1740956412}
   - component: {fileID: 1740956411}
   - component: {fileID: 1740956410}
+  - component: {fileID: 1740956417}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -8036,6 +8037,8 @@ MonoBehaviour:
   groundCheck: {fileID: 1740956413}
   rb: {fileID: 1740956410}
   secretExit: {fileID: 0}
+  scene:
+    m_Handle: 0
   allowFreeJump: 0
   freeJumpForce: 7
 --- !u!70 &1740956412
@@ -8199,6 +8202,18 @@ Transform:
   - {fileID: 1839241500}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1740956417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740956409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5266507946074ca42aaa067cf95c6e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1839241499
 GameObject:
   m_ObjectHideFlags: 0

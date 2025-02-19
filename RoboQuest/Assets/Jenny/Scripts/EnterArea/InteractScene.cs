@@ -17,6 +17,7 @@ public class InteractScene : GeneralInteraction
         {
             manager.SaveGame();
             Debug.Log("enter scene ship");
+            SceneManager.LoadScene("Ship");
         }
         else if(gameObject.name.Equals("Choir Passage") && IsWithinInteractDistance())
         {
@@ -29,7 +30,6 @@ public class InteractScene : GeneralInteraction
 
             manager.SaveGame(); //save before load different scene
             SceneManager.LoadScene("Cave");
-            
         }
 
     }

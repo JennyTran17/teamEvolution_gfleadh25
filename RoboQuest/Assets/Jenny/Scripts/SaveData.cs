@@ -12,5 +12,8 @@ public class SaveData
     public bool hasFuel;
     public bool hasWire;
     public bool hasSpareParts;
+    public bool completeEngine;
+    public bool completeFuel;
+    public bool completeCP;
 }
 
