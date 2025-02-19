@@ -8,12 +8,12 @@ public class SaveData
     public List<InventorySaveData> inventorySaveData;
     public List<int> collectedObjID = new List<int>();
     public List<DropItemController> droppedItems = new List<DropItemController>();
-    public bool hasBattery;
-    public bool hasFuel;
-    public bool hasWire;
-    public bool hasSpareParts;
-    public bool completeEngine;
-    public bool completeFuel;
-    public bool completeCP;
+    public bool hasBattery= false;
+    public bool hasFuel= false;
+    public bool hasWire = false;
+    public bool hasSpareParts = false;
+    public bool completeEngine = false;
+    public bool completeFuel = false;
+    public bool completeCP = false;
 }
 

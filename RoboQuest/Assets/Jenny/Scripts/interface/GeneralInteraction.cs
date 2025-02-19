@@ -16,7 +16,7 @@ public abstract class GeneralInteraction : MonoBehaviour, Interactable
 
     void Update()
     {
-        if (Keyboard.current.fKey.isPressed && IsWithinInteractDistance())
+        if (Keyboard.current.fKey.wasPressedThisFrame && IsWithinInteractDistance())
         {
             Interact();
             Debug.Log("interact called");

@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
         
         saveData.inventorySaveData = inventoryController.GetInventoryItems();
-        saveData.hasBattery = true;
+       
         if (player != null)
         {
             PlayerSaveData.Instance.SavePlayerPosition(player.transform.position);
@@ -78,7 +78,10 @@ public class GameManager : MonoBehaviour
 
             inventoryController.SetInventoryItems(saveData.inventorySaveData);
             inventoryController.SetDropItem(saveData.droppedItems);
-            
+            this.saveData.hasBattery = saveData.hasBattery;
+            this.saveData.hasWire = saveData.hasWire;
+            this.saveData.hasFuel = saveData.hasFuel;
+            this.saveData.completeCP = saveData.completeCP;
 
         }
         else
@@ -211,5 +214,6 @@ public class GameManager : MonoBehaviour
     public void completeCP()
     {
         saveData.completeCP = true;
+        SaveGame();
     }
 }
