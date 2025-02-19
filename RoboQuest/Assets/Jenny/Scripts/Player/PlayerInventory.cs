@@ -32,22 +32,40 @@ public class PlayerInventory : MonoBehaviour
 
             }
 
+            if (item.ID == 1)
+            {
+                Debug.Log("base prefab");
+
+            }
+            else if (item.ID == 2)
+            {
+                GameManager.Instance.SaveHasBattery();
+
+            }
+            else if (item.ID == 3)
+            {
+                GameManager.Instance.SaveHasWire();
+
+            }
+            else if (item.ID == 4)
+            {
+                GameManager.Instance.SaveHasFuel();
+
+            }
+            //else if (collision.gameObject.name.Equals("Spare Parts"))
+            //{
+            //    GameManager.Instance.SaveHasSpareParts();
+
+            //}
+
         }
        
-        if (collision.gameObject.name.Equals("Item"))
-        {
-           CollectBattery();
-                
-        }
-       
+        
+
+
     }
 
-    public void CollectBattery()
-    {
-           
-        GameManager.Instance.SaveHasBattery();
-        Debug.Log("Battery collected!");
-    }
+    
 }
 
 

@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
         inventoryController = FindObjectOfType<InventoryController>();
         playerInventory = FindObjectOfType<PlayerInventory>();
 
-        if (player == null) Debug.LogWarning("Player not found in new scene!");
+        if (player == null) Debug.Log("Player not found in new scene!");
         if (inventoryController == null) Debug.LogWarning("InventoryController not found in new scene!");
 
         player = GameObject.FindGameObjectWithTag("Player");
@@ -160,11 +160,7 @@ public class GameManager : MonoBehaviour
         LoadGame();
     }
 
-    public void SaveHasBattery()
-    {
-        saveData.hasBattery = true;
-        SaveGame();
-    }
+   
 
     private IEnumerator ApplyPlayerPosition()
     {
@@ -188,5 +184,32 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("Player not found in the scene!");
         }
+    }
+
+
+
+    public void SaveHasBattery()
+    {
+        saveData.hasBattery = true;
+        SaveGame();
+    }
+    public void SaveHasWire()
+    {
+        saveData.hasWire = true;
+        SaveGame();
+    }
+    public void SaveHasFuel()
+    {
+        saveData.hasFuel = true;
+        SaveGame();
+    }
+    public void SaveHasSpareParts()
+    {
+        saveData.hasSpareParts = true;
+        SaveGame();
+    }
+    public void completeCP()
+    {
+        saveData.completeCP = true;
     }
 }

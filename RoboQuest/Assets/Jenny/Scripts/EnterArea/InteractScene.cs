@@ -31,6 +31,12 @@ public class InteractScene : GeneralInteraction
             manager.SaveGame(); //save before load different scene
             SceneManager.LoadScene("Cave");
         }
+        else if (gameObject.name.Equals("Main Level") && IsWithinInteractDistance())
+        {
+
+            manager.SaveGame(); //save before load different scene
+            SceneManager.LoadScene("Main Level");
+        }
 
     }
 
