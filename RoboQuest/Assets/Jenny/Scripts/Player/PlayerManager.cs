@@ -93,6 +93,7 @@ public class PlayerManager : MonoBehaviour
         if (planet != null)
         {
             planet.transform.Rotate(0, 0, movement.x * rotationSpeed * Time.deltaTime);
+            GameManager.Instance.SavePlanetPosition(planet.transform.rotation);
         }
         //player movement
         rb.velocity = new Vector2((movement.x * playerSpeed), rb.velocity.y);

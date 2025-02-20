@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     {
         if (inventoryController == null)
         {
-            Debug.LogError("SaveGame failed: Missing player or inventory reference!");
+            Debug.Log("SaveGame failed: Missing player or inventory reference!");
             return;
         }
 
@@ -190,6 +190,11 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public void SavePlanetPosition(Quaternion rotation)
+    {
+        saveData.planetPosition = rotation;
+        SaveGame();
+    }
 
     public void SaveHasBattery()
     {

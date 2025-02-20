@@ -15,5 +15,7 @@ public class SaveData
     public bool completeEngine = false;
     public bool completeFuel = false;
     public bool completeCP = false;
+
+    public Quaternion planetPosition;
 }
 
