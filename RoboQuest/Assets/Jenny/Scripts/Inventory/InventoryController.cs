@@ -10,8 +10,8 @@ public class InventoryController : MonoBehaviour
     public GameObject slotPrefab; 
     public int slotCount;
     public GameObject[] itemPrefabs;
-
   
+
     private void Start()
     {
         itemDictionary = FindObjectOfType<ItemDictionary>();
@@ -42,8 +42,11 @@ public class InventoryController : MonoBehaviour
             Slot slot = slotTransform.GetComponent<Slot>();
             if(slot != null && slot.currentItem == null)
             {
+                Debug.Log($"Before Instantiate: {itemPrefab.transform.localScale}");
                 GameObject newItem = Instantiate(itemPrefab, slotTransform);
                 newItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                //Debug.Log($"After Instantiate: {newItem.transform.localScale}");
+                //newItem.transform.localScale = new Vector3(0.8f, 1f, 1f); 
                 slot.currentItem = newItem;
                 return true;
             }

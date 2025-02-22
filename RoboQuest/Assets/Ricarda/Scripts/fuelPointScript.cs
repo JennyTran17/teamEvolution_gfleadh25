@@ -19,7 +19,7 @@ public class fuelPointScript : GeneralInteraction
         GameManager manager = FindObjectOfType<GameManager>();
         if (IsWithinInteractDistance())
         {
-            if (!hasFuel)
+            if (/*!hasFuel*/ !GameManager.Instance.saveData.hasFuel)
             {
                 alertScript.fuelNeeded_Alert = true;
             }
@@ -43,7 +43,7 @@ public class fuelPointScript : GeneralInteraction
         GameManager manager = FindObjectOfType<GameManager>();
         if (gameObject.name.Equals("Fuel Point") && IsWithinInteractDistance())
         {
-            if (hasFuel)
+            if (/*hasFuel*/ GameManager.Instance.saveData.hasFuel)
             {
                 manager.SaveGame(); //save game before load different scene
                 SceneManager.LoadSceneAsync("Fuel Puzzle"); //code need to change if load scene additive to load scene on top of scene or call scene load scene active and set others inactive

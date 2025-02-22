@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
     public Rigidbody2D rb;
     private GameObject planet;
     public GameObject secretExit; //cave room
-    Scene scene;
+    public Scene scene;
 
     public bool allowFreeJump = false; // Toggle free jumping
     public float freeJumpForce = 7f;   //Force for free jumping
@@ -93,6 +93,7 @@ public class PlayerManager : MonoBehaviour
         if (planet != null)
         {
             planet.transform.Rotate(0, 0, movement.x * rotationSpeed * Time.deltaTime);
+            GameManager.Instance.SavePlanetPosition(planet.transform.rotation);
         }
         //player movement
         rb.velocity = new Vector2((movement.x * playerSpeed), rb.velocity.y);

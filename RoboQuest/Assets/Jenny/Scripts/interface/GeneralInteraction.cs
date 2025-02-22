@@ -16,7 +16,7 @@ public abstract class GeneralInteraction : MonoBehaviour, Interactable
 
     void Update()
     {
-        if (Keyboard.current.fKey.isPressed && IsWithinInteractDistance())
+        if (Keyboard.current.fKey.wasPressedThisFrame && IsWithinInteractDistance())
         {
             Interact();
             Debug.Log("interact called");
@@ -33,6 +33,7 @@ public abstract class GeneralInteraction : MonoBehaviour, Interactable
         {
             //turn on the sprite
             interactSprite.gameObject.SetActive(true);
+            GameManager.Instance.SaveGame();
         }
        
     }

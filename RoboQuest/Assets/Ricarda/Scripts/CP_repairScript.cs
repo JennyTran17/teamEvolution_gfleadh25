@@ -16,7 +16,7 @@ public class CP_repairScript : GeneralInteraction
         GameManager manager = FindObjectOfType<GameManager>();
         if (IsWithinInteractDistance())
         {
-            if (!hasWires)
+            if (/*!hasWires*/ !GameManager.Instance.saveData.hasWire)
             {
               alertScript.wiresNeeded_Alert = true;
             }
@@ -41,16 +41,13 @@ public class CP_repairScript : GeneralInteraction
         GameManager manager = FindObjectOfType<GameManager>();
         if (gameObject.name.Equals("Control Panel Repair Point") && IsWithinInteractDistance())
         {
-            if (hasWires)
+            if (/*hasWires*/ GameManager.Instance.saveData.hasWire)
             {
                 manager.SaveGame();//save game before load different scene
                 SceneManager.LoadSceneAsync("Control Puzzle");//code need to change if load scene additive to load scene on top of scene or call scene load scene active and set others inactive
                 Debug.Log("enter cp repair point");
             }
-            else
-            {
-                alertScript.wiresNeeded_Alert = true;
-            }
+            
         }
     }
 }

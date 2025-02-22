@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -10,7 +11,8 @@ public class GameManager : MonoBehaviour
     private string saveLocation;
     private InventoryController inventoryController;
     private GameObject player;
-    private SaveData saveData = new SaveData();//
+    public SaveData saveData = new SaveData();//
+    private PlayerInventory playerInventory;
     private void Awake()
     {
         if (Instance != null)
@@ -24,39 +26,37 @@ public class GameManager : MonoBehaviour
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
 
         SceneManager.sceneLoaded += OnSceneLoaded;
-
+        
+    }
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        StartCoroutine(DelayedLoadGame());
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Scene Loaded: " + scene.name);
+        StartCoroutine(ApplyPlayerPosition());
 
-        player = GameObject.FindGameObjectWithTag("Player");
-        inventoryController = FindObjectOfType<InventoryController>();
 
-        if (player == null) Debug.LogWarning("Player not found in new scene!");
-        if (inventoryController == null) Debug.LogWarning("InventoryController not found in new scene!");
-
-        LoadGame(); // Load the saved data into the new objects
     }
 
     public async void SaveGame()
     {
-        if (player == null || inventoryController == null)
+        if (inventoryController == null)
         {
-            Debug.LogError("SaveGame failed: Missing player or inventory reference!");
+            Debug.Log("SaveGame failed: Missing player or inventory reference!");
             return;
         }
 
-        //SaveData saveData = new SaveData
-        //{
-        //    playerPosition = player.transform.position,
-        //    inventorySaveData = inventoryController.GetInventoryItems()
-
-        //};
-
-        saveData.playerPosition = player.transform.position;
+        
         saveData.inventorySaveData = inventoryController.GetInventoryItems();
+       
+        if (player != null)
+        {
+            PlayerSaveData.Instance.SavePlayerPosition(player.transform.position);
+        }
+
 
 
         string json = JsonUtility.ToJson(saveData);
@@ -74,11 +74,15 @@ public class GameManager : MonoBehaviour
             this.saveData.collectedObjID = saveData.collectedObjID;// ensure loaded data is assigned properly
             RemoveCollectedItemsFromScene(saveData.inventorySaveData);  //check if json file list have the item ID in the inventory, delete the game object in hierarchy
 
-            player.transform.position = saveData.playerPosition;
+           // player.transform.position = saveData.playerPosition;
 
             inventoryController.SetInventoryItems(saveData.inventorySaveData);
             inventoryController.SetDropItem(saveData.droppedItems);
-            
+            this.saveData.hasBattery = saveData.hasBattery;
+            this.saveData.hasWire = saveData.hasWire;
+            this.saveData.hasFuel = saveData.hasFuel;
+            this.saveData.completeCP = saveData.completeCP;
+
         }
         else
         {
@@ -97,16 +101,7 @@ public class GameManager : MonoBehaviour
             Item item = obj.GetComponent<Item>();
             if (item != null )
             {
-                //foreach (InventorySaveData savedItem in savedInventory)
-                //{
-                //    if (item.ID == savedItem.itemID)
-                //    {
-                //        Debug.Log($"Destroying collected item: {obj.name} (ID: {item.ID})");
-                //        Destroy(obj);
-                //        break; // Stop checking once a match is found
-                //    }
-                //}
-
+                
                 foreach (int id in saveData.collectedObjID)
                 {
                     if (item.ID == id)
@@ -148,5 +143,82 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         SaveGame(); // Save before quitting
+    }
+
+    private IEnumerator DelayedLoadGame()
+    {
+        yield return new WaitForSeconds(0.1f); // Allow scene objects to initialize
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        inventoryController = FindObjectOfType<InventoryController>();
+        playerInventory = FindObjectOfType<PlayerInventory>();
+
+        if (player == null) Debug.Log("Player not found in new scene!");
+        if (inventoryController == null) Debug.LogWarning("InventoryController not found in new scene!");
+
+        player = GameObject.FindGameObjectWithTag("Player");
+
+       
+
+        LoadGame();
+    }
+
+   
+
+    private IEnumerator ApplyPlayerPosition()
+    {
+        yield return new WaitForEndOfFrame(); // Wait for all objects to be initialized
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            Vector3 savedPosition = PlayerSaveData.Instance.GetSavedPosition();
+            if (savedPosition != Vector3.zero)
+            {
+                player.transform.position = savedPosition;
+                Debug.Log($"Applied saved position: {savedPosition}");
+            }
+            else
+            {
+                Debug.Log("No saved position found for this scene.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Player not found in the scene!");
+        }
+    }
+
+
+    public void SavePlanetPosition(Quaternion rotation)
+    {
+        saveData.planetPosition = rotation;
+        SaveGame();
+    }
+
+    public void SaveHasBattery()
+    {
+        saveData.hasBattery = true;
+        SaveGame();
+    }
+    public void SaveHasWire()
+    {
+        saveData.hasWire = true;
+        SaveGame();
+    }
+    public void SaveHasFuel()
+    {
+        saveData.hasFuel = true;
+        SaveGame();
+    }
+    public void SaveHasSpareParts()
+    {
+        saveData.hasSpareParts = true;
+        SaveGame();
+    }
+    public void completeCP()
+    {
+        saveData.completeCP = true;
+        SaveGame();
     }
 }

@@ -131,6 +131,28 @@ public class SlidingPuzzleManager : MonoBehaviour
 
         Debug.Log("WIN!!!");
         puzzleSolved = true;
+        if (SceneManager.GetActiveScene().name.Equals("Engine Puzzle"))
+        {
+            if(GameManager.Instance != null)
+            {
+                Debug.Log("complete engine");
+            }
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("Control Puzzle"))
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.completeCP();
+                GameManager.Instance.SaveGame();
+            }
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("Fuel Puzzle"))
+        {
+            if (GameManager.Instance != null)
+            {
+                Debug.Log("complete fuel");
+            }
+        }
         return true;
     }
 
