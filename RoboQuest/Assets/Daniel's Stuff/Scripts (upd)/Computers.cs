@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class Computers : GeneralInteraction
 {
-    // Start is called before the first frame update
-    void Start()
+    //[SerializeField] private ComputerInteract computerInteract;
+    private ComputerInteract computerInteract;
+
+    void Awake()
     {
-        
+        computerInteract = GetComponent<ComputerInteract>();
+        if (computerInteract == null )
+        {
+            Debug.LogError("ComputerInteract component not found on " + gameObject.name);
+        }
     }
 
     public override void Interact()
     {
-
+        if (computerInteract != null)
+        {
+            computerInteract.InteractWithComputer();
+        }
     }
 }

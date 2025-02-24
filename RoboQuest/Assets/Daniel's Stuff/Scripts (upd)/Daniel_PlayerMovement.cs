@@ -14,13 +14,10 @@ public class Daniel_PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        // Get access to the rigid body
         rb = gameObject.GetComponent<Rigidbody2D>();
 
-        // Look up the animator at the start of the application
         animator = gameObject.GetComponent<Animator>();
-
-        // Look up the sprite renderer 
+        
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 

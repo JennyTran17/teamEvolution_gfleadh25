@@ -599,7 +599,6 @@ GameObject:
   - component: {fileID: 941206574}
   - component: {fileID: 941206576}
   - component: {fileID: 941206575}
-  - component: {fileID: 941206577}
   m_Layer: 0
   m_Name: Scroller
   m_TagString: Untagged
@@ -661,21 +660,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941206573}
   m_CullTransparentMesh: 1
---- !u!114 &941206577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941206573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe132a7142c49d64ab5e3a3930a2b009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rawImage: {fileID: 941206575}
-  _x: 0.03
-  _y: 0.03
 --- !u!1 &1090894822
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +835,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316c9bb823a574c45b5c24e1543386bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Main Level
 --- !u!114 &1882411023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,7 +891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456e1dc750da88341ac4942181f4939f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioObj: {fileID: 588753218723867610, guid: d588f961e20a44e40ad1e086fd0c5c50, type: 3}
 --- !u!1 &2067361364
 GameObject:
   m_ObjectHideFlags: 0
