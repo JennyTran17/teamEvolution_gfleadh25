@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2569798848719307597}
   - component: {fileID: 6896571046037073731}
+  - component: {fileID: 1082103882304021784}
   m_Layer: 0
   m_Name: Hover Audio
   m_TagString: Untagged
@@ -128,3 +129,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1082103882304021784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588753218723867610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716013eb9c448d9448bb7d066e7e599a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

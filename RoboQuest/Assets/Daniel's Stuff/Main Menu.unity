@@ -186,8 +186,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7eaceb1d0f963304eb803746acde3bef, type: 2}
-  m_sharedMaterial: {fileID: -3229675500899529176, guid: 7eaceb1d0f963304eb803746acde3bef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8933e50ef7d57f04fb466924e01fde3e, type: 2}
+  m_sharedMaterial: {fileID: -3229675500899529176, guid: 8933e50ef7d57f04fb466924e01fde3e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -315,7 +315,7 @@ Animator:
   m_GameObject: {fileID: 386870744}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07828a234dba14c4d8b0441b777f331e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1180c6164f273bb4191aab729c3418a3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -419,8 +419,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7eaceb1d0f963304eb803746acde3bef, type: 2}
-  m_sharedMaterial: {fileID: -3229675500899529176, guid: 7eaceb1d0f963304eb803746acde3bef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8933e50ef7d57f04fb466924e01fde3e, type: 2}
+  m_sharedMaterial: {fileID: -3229675500899529176, guid: 8933e50ef7d57f04fb466924e01fde3e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -548,7 +548,7 @@ Animator:
   m_GameObject: {fileID: 594366250}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07828a234dba14c4d8b0441b777f331e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1180c6164f273bb4191aab729c3418a3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -645,7 +645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: eb3f6736ff8ed7a4cb5d105f80de51b9, type: 3}
+  m_Texture: {fileID: 2800000, guid: 4735f52266413304aa5fc6cf7c466431, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -835,6 +835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316c9bb823a574c45b5c24e1543386bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: Main Level
 --- !u!114 &1882411023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,6 +892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456e1dc750da88341ac4942181f4939f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioObj: {fileID: 588753218723867610, guid: d588f961e20a44e40ad1e086fd0c5c50, type: 3}
 --- !u!1 &2067361364
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,8 +957,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7eaceb1d0f963304eb803746acde3bef, type: 2}
-  m_sharedMaterial: {fileID: -3229675500899529176, guid: 7eaceb1d0f963304eb803746acde3bef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8933e50ef7d57f04fb466924e01fde3e, type: 2}
+  m_sharedMaterial: {fileID: -3229675500899529176, guid: 8933e50ef7d57f04fb466924e01fde3e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1096,7 +1098,7 @@ Animator:
   m_GameObject: {fileID: 2067361364}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07828a234dba14c4d8b0441b777f331e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1180c6164f273bb4191aab729c3418a3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

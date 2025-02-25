@@ -12,11 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: scifi_tileset_02_64x64_144
   m_EditorClassIdentifier: 
-<<<<<<<< HEAD:RoboQuest/Assets/Kalyn/Rhythm Game Tutorial/tilesets/tileset_11.asset
-  m_Sprite: {fileID: -663531352, guid: b0b052c184875204e8f5521ab97d4ffb, type: 3}
-========
   m_Sprite: {fileID: -1968967, guid: 20260b53341b69e4089f02d5cfa81f63, type: 3}
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/Tilesheets/scifi_tileset_02_64x64_144.asset
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

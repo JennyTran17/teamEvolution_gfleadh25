@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
 guid: 8a2f49be8a4daa440877893caaeb4692
-========
-guid: 0725de3f5bb579b4580622a5045b351f
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -67,9 +63,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -89,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,20 +97,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-      name: Entry_0
-========
       name: DinoBot_run (upd)_0
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-        width: 32
-========
         width: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -123,53 +111,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-      spriteID: 7c430fe8f6c4ce143b3bf63d85062e0c
-      internalID: 1427822131
-========
-      spriteID: 86f22586326378340b6700e4ca2b8e7d
-      internalID: -8279297
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
+      spriteID: 8d8aba7446609a440ad1104160ec840c
+      internalID: 1464053722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-      name: Entry_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 397ac1c9254063340ba5b923a7ac2e31
-      internalID: -180812057
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Entry_2
-========
       name: DinoBot_run (upd)_1
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-        width: 32
-========
         width: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -178,53 +132,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-      spriteID: ebe6e15d50756b347a196372bc0f8e85
-      internalID: 1233303083
-========
-      spriteID: 0ca7cc9d37886494aabc1729ccafce4f
-      internalID: 536757077
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
+      spriteID: a4aa408b4d5f61b4b8bfdf590e51a470
+      internalID: 90136305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-      name: Entry_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9db0572380e5d4242a4b1fb7cbda8034
-      internalID: 531948979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Entry_4
-========
       name: DinoBot_run (upd)_2
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-        width: 32
-========
         width: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -233,53 +153,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-      spriteID: aad8b37ceb93ad14bb51ae363544032c
-      internalID: -1752188360
-========
-      spriteID: bd2ead6295eb9c243ab992599451d9c8
-      internalID: -934773760
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
+      spriteID: 6f057de78167b7b42af1e9256f7e22b3
+      internalID: 2038781162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-      name: Entry_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be403ae68d9870f4491293a797e01f1a
-      internalID: -1630765526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Entry_6
-========
       name: DinoBot_run (upd)_3
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-        width: 32
-========
         width: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -288,33 +174,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-      spriteID: 1a3bc43a01217774b9e882718c82c4b2
-      internalID: 2145381970
-========
-      spriteID: ba8f15d3a14b60449a1f6ab34aa084c8
-      internalID: -531964132
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
+      spriteID: e08b5e927adaecb48a31b6390dc0c0f9
+      internalID: -707838943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-      name: Entry_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-========
       name: DinoBot_run (upd)_4
       rect:
         serializedVersion: 2
         x: 256
         y: 0
         width: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -323,12 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-      spriteID: b4eb9f1e8ecf4c04d9038d2aacd006da
-      internalID: 951587812
-========
-      spriteID: d8e99f12dc8fe4840a63033d72ddcd54
-      internalID: 95806723
+      spriteID: 728b3dda81e7d114eb5a366a4f2ed0f6
+      internalID: -323847023
       vertices: []
       indices: 
       edges: []
@@ -348,9 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d33764199d063844ab8fe64456bbd3b8
-      internalID: -1938299689
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
+      spriteID: ea67ad22c319cbc4f86d50f14a235eed
+      internalID: -348145235
       vertices: []
       indices: 
       edges: []
@@ -358,7 +225,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 1b06db54c2db59a49989cdd73d225374
     internalID: 0
     vertices: []
     indices: 
@@ -366,23 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Entry.png.meta
-      Entry_0: 1427822131
-      Entry_1: -180812057
-      Entry_2: 1233303083
-      Entry_3: 531948979
-      Entry_4: -1752188360
-      Entry_5: -1630765526
-      Entry_6: 2145381970
-      Entry_7: 951587812
-========
-      DinoBot_run (upd)_0: -8279297
-      DinoBot_run (upd)_1: 536757077
-      DinoBot_run (upd)_2: -934773760
-      DinoBot_run (upd)_3: -531964132
-      DinoBot_run (upd)_4: 95806723
-      DinoBot_run (upd)_5: -1938299689
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_run (upd).png.meta
+      DinoBot_run (upd)_0: 1464053722
+      DinoBot_run (upd)_1: 90136305
+      DinoBot_run (upd)_2: 2038781162
+      DinoBot_run (upd)_3: -707838943
+      DinoBot_run (upd)_4: -323847023
+      DinoBot_run (upd)_5: -348145235
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

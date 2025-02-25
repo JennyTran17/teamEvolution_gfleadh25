@@ -12,6 +12,7 @@ public class InteractScene : GeneralInteraction
         {
             manager.SaveGame();
             Debug.Log("enter scene station");
+            SceneManager.LoadScene("Station");
         }
         else if(gameObject.name.Equals("Ship") && IsWithinInteractDistance())
         {

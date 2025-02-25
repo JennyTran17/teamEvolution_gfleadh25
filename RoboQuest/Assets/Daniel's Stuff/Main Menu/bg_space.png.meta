@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/kvd_circuitBoard_pixelart.png.meta
 guid: 7913adcb618e92c458d5cba011aac6b7
-========
-guid: d9f9e999fc1523948ba95880bc929fb2
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Main Menu/bg_space.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -41,9 +37,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 2
-    wrapV: 2
-    wrapW: 2
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -67,9 +63,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -89,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

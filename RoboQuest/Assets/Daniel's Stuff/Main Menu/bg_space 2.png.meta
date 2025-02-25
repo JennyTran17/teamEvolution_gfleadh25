@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/scifi wallpaper.png.meta
 guid: 4735f52266413304aa5fc6cf7c466431
-========
-guid: eb3f6736ff8ed7a4cb5d105f80de51b9
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Main Menu/bg_space 2.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -41,9 +37,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 2
-    wrapV: 2
-    wrapW: 2
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -67,9 +63,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -89,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

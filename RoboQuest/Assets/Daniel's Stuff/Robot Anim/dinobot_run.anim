@@ -6,11 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Animations/controlPanel_Anim.anim
-  m_Name: controlPanel_Anim
-========
   m_Name: dinobot_run
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Robot Anim/dinobot_run.anim
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -25,45 +21,23 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Animations/controlPanel_Anim.anim
-      value: {fileID: 1075491257, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - time: 0.16666667
-      value: {fileID: -158072290, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - time: 0.33333334
-      value: {fileID: -247886134, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - time: 0.5
-      value: {fileID: -847115548, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - time: 0.6666667
-      value: {fileID: 1075491257, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - time: 0.8333333
-      value: {fileID: -158072290, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - time: 1
-      value: {fileID: -247886134, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - time: 1.1666666
-      value: {fileID: -847115548, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-========
-      value: {fileID: -8279297, guid: 0725de3f5bb579b4580622a5045b351f, type: 3}
+      value: {fileID: 1464053722, guid: 8a2f49be8a4daa440877893caaeb4692, type: 3}
     - time: 0.071428575
-      value: {fileID: 536757077, guid: 0725de3f5bb579b4580622a5045b351f, type: 3}
+      value: {fileID: 90136305, guid: 8a2f49be8a4daa440877893caaeb4692, type: 3}
     - time: 0.14285715
-      value: {fileID: -934773760, guid: 0725de3f5bb579b4580622a5045b351f, type: 3}
+      value: {fileID: 2038781162, guid: 8a2f49be8a4daa440877893caaeb4692, type: 3}
     - time: 0.21428572
-      value: {fileID: -531964132, guid: 0725de3f5bb579b4580622a5045b351f, type: 3}
+      value: {fileID: -707838943, guid: 8a2f49be8a4daa440877893caaeb4692, type: 3}
     - time: 0.2857143
-      value: {fileID: 95806723, guid: 0725de3f5bb579b4580622a5045b351f, type: 3}
+      value: {fileID: -323847023, guid: 8a2f49be8a4daa440877893caaeb4692, type: 3}
     - time: 0.35714287
-      value: {fileID: -1938299689, guid: 0725de3f5bb579b4580622a5045b351f, type: 3}
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Robot Anim/dinobot_run.anim
+      value: {fileID: -348145235, guid: 8a2f49be8a4daa440877893caaeb4692, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Animations/controlPanel_Anim.anim
-  m_SampleRate: 6
-========
   m_SampleRate: 14
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Robot Anim/dinobot_run.anim
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -80,33 +54,18 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Animations/controlPanel_Anim.anim
-    - {fileID: 1075491257, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - {fileID: -158072290, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - {fileID: -247886134, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - {fileID: -847115548, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - {fileID: 1075491257, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - {fileID: -158072290, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - {fileID: -247886134, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-    - {fileID: -847115548, guid: 470c67132c31a504f8c602c707cc4d4b, type: 3}
-========
-    - {fileID: -8279297, guid: 0725de3f5bb579b4580622a5045b351f, type: 3}
-    - {fileID: 536757077, guid: 0725de3f5bb579b4580622a5045b351f, type: 3}
-    - {fileID: -934773760, guid: 0725de3f5bb579b4580622a5045b351f, type: 3}
-    - {fileID: -531964132, guid: 0725de3f5bb579b4580622a5045b351f, type: 3}
-    - {fileID: 95806723, guid: 0725de3f5bb579b4580622a5045b351f, type: 3}
-    - {fileID: -1938299689, guid: 0725de3f5bb579b4580622a5045b351f, type: 3}
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Robot Anim/dinobot_run.anim
+    - {fileID: 1464053722, guid: 8a2f49be8a4daa440877893caaeb4692, type: 3}
+    - {fileID: 90136305, guid: 8a2f49be8a4daa440877893caaeb4692, type: 3}
+    - {fileID: 2038781162, guid: 8a2f49be8a4daa440877893caaeb4692, type: 3}
+    - {fileID: -707838943, guid: 8a2f49be8a4daa440877893caaeb4692, type: 3}
+    - {fileID: -323847023, guid: 8a2f49be8a4daa440877893caaeb4692, type: 3}
+    - {fileID: -348145235, guid: 8a2f49be8a4daa440877893caaeb4692, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Animations/controlPanel_Anim.anim
-    m_StopTime: 1.3333333
-========
     m_StopTime: 0.42857143
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Robot Anim/dinobot_run.anim
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

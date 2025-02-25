@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/shipProto2.png.meta
 guid: b83a495a2ab8b9d468efb42b978e2d9d
-========
-guid: be6919452aba5e74f808023275598d91
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_jump (upd).png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -67,9 +63,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -89,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,232 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/shipProto2.png.meta
-      name: shipProto2_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: baf78f4a4e1ff754d8ef25d2bce55ae0
-      internalID: 130646417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shipProto2_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d153488f15f8414788ca997e4d8713a
-      internalID: -1685404983
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shipProto2_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a10275dbf0374e04fb02408ca563ff1d
-      internalID: 1833501844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shipProto2_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7eb44c1ff89da0841a5c8d3c85e10400
-      internalID: -674156007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shipProto2_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 18ee94f2bed2ec2478844ec94efe5cbf
-      internalID: -1553630863
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shipProto2_5
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1cde132bc7dc11c4d9e38aadeecad387
-      internalID: 983475726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shipProto2_6
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a157e44ad8b44994091d46fdba9081bb
-      internalID: 273946700
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shipProto2_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52d6d746e480bfa40aa424c0a666057f
-      internalID: 681951629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shipProto2_8
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2213118ab12f8df44a2d803906a373d9
-      internalID: -1558237803
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shipProto2_9
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c7f83a20567cb0469d122b42ce8fed9
-      internalID: 287900998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shipProto2_10
-========
       name: DinoBot_jump (upd)_0
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_jump (upd).png.meta
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/shipProto2.png.meta
-        width: 16
-        height: 16
-========
         width: 64
         height: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_jump (upd).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,27 +111,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/shipProto2.png.meta
-      spriteID: ad99da296787d014491417387cffa074
-      internalID: -1228716473
-========
-      spriteID: d36eaabd01b2b9645b1c47cbb2511866
-      internalID: -745059605
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_jump (upd).png.meta
+      spriteID: 2bfd251a6a62497479317e515f8945d5
+      internalID: -1659097510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/shipProto2.png.meta
-      name: shipProto2_11
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-========
       name: DinoBot_jump (upd)_1
       rect:
         serializedVersion: 2
@@ -362,7 +125,6 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_jump (upd).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,27 +132,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/shipProto2.png.meta
-      spriteID: 9aa80bac985796e4a879f8941458eb77
-      internalID: 1837453935
-========
-      spriteID: fcdd5d1146b215d42b4cb36d9da17590
-      internalID: 1085488940
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_jump (upd).png.meta
+      spriteID: 9de7260686ff9ba4281c25817086a372
+      internalID: -23733752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/shipProto2.png.meta
-      name: shipProto2_12
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-========
       name: DinoBot_jump (upd)_2
       rect:
         serializedVersion: 2
@@ -398,7 +146,6 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_jump (upd).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,12 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/shipProto2.png.meta
-      spriteID: feadea1817954cc4fabb55ff423b075f
-      internalID: -110314523
-========
-      spriteID: 61f61e966e50efb4cb6e0af0b6cc0b01
-      internalID: -86054465
+      spriteID: 2050e231646db424bbec8ced171376be
+      internalID: 50548954
       vertices: []
       indices: 
       edges: []
@@ -431,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69c46dfcbb5d7074480106b0a924aadd
-      internalID: -941329477
+      spriteID: a165d451ad247d64f9e0584759522918
+      internalID: 412402974
       vertices: []
       indices: 
       edges: []
@@ -452,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f1ca5e7d6e26a64ca1360f260c247a2
-      internalID: -1345051854
+      spriteID: d59e58a588ac79f4ca9c1f6660bc0c28
+      internalID: 1159043867
       vertices: []
       indices: 
       edges: []
@@ -473,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 794ecdb9ac46b0d41b09d4f45719f0b7
-      internalID: -1428937255
+      spriteID: f1aaf45891008f14da88490a3949a2e4
+      internalID: 1367462256
       vertices: []
       indices: 
       edges: []
@@ -494,8 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a954b44eff5f294f9422c256e87b0d1
-      internalID: 148435327
+      spriteID: 6b3edc781739a584785dd69b06df912b
+      internalID: -1259643308
       vertices: []
       indices: 
       edges: []
@@ -515,8 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48cc8eff96f53794d8cc0999c8d39a70
-      internalID: -563600344
+      spriteID: bb5f6591155500d448be4c5944e94690
+      internalID: -1944815506
       vertices: []
       indices: 
       edges: []
@@ -536,9 +279,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 154b247b270d08d46987b544d7a5f0b1
-      internalID: 84207436
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_jump (upd).png.meta
+      spriteID: 07faa2f6c445d774aab693946898dc78
+      internalID: -1519848792
       vertices: []
       indices: 
       edges: []
@@ -546,7 +288,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 99d14fce643988c4c807924ee5257c5d
     internalID: 0
     vertices: []
     indices: 
@@ -554,31 +296,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/shipProto2.png.meta
-      shipProto2_0: 130646417
-      shipProto2_1: -1685404983
-      shipProto2_10: -1228716473
-      shipProto2_11: 1837453935
-      shipProto2_12: -110314523
-      shipProto2_2: 1833501844
-      shipProto2_3: -674156007
-      shipProto2_4: -1553630863
-      shipProto2_5: 983475726
-      shipProto2_6: 273946700
-      shipProto2_7: 681951629
-      shipProto2_8: -1558237803
-      shipProto2_9: 287900998
-========
-      DinoBot_jump (upd)_0: -745059605
-      DinoBot_jump (upd)_1: 1085488940
-      DinoBot_jump (upd)_2: -86054465
-      DinoBot_jump (upd)_3: -941329477
-      DinoBot_jump (upd)_4: -1345051854
-      DinoBot_jump (upd)_5: -1428937255
-      DinoBot_jump (upd)_6: 148435327
-      DinoBot_jump (upd)_7: -563600344
-      DinoBot_jump (upd)_8: 84207436
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_jump (upd).png.meta
+      DinoBot_jump (upd)_0: -1659097510
+      DinoBot_jump (upd)_1: -23733752
+      DinoBot_jump (upd)_2: 50548954
+      DinoBot_jump (upd)_3: 412402974
+      DinoBot_jump (upd)_4: 1159043867
+      DinoBot_jump (upd)_5: 1367462256
+      DinoBot_jump (upd)_6: -1259643308
+      DinoBot_jump (upd)_7: -1944815506
+      DinoBot_jump (upd)_8: -1519848792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

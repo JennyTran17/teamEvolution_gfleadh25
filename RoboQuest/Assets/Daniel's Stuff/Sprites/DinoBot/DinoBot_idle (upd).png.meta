@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
 guid: 0071bd2e36e04fe40aad0992bfaa09b4
-========
-guid: 4dd3b087d7f29d14e8d6e16d68370ba0
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -67,9 +63,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -89,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,22 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-      name: Chest_0
-========
       name: DinoBot_idle (upd)_0
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-        width: 32
-        height: 32
-========
         width: 64
         height: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,55 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-      spriteID: 82527c2fc5216a142aa36464bc248739
-      internalID: -1990556827
-========
-      spriteID: 199415bb3b5c99c4b98e01729ad816ea
-      internalID: 1784886144
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
+      spriteID: db50835e6c1d3794294a1db8a1bc257f
+      internalID: 163491799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-      name: Chest_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73b7b51cf210d204faa9d786ec9a2025
-      internalID: -614533583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_2
-========
       name: DinoBot_idle (upd)_1
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-        width: 32
-        height: 32
-========
         width: 64
         height: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,55 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-      spriteID: 8dd1be43a8453864e818d2f2dad1389a
-      internalID: 905300697
-========
-      spriteID: eec989474cb744d4b9b8c984a141c414
-      internalID: 1900591079
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
+      spriteID: f3dda0158d9a1734a8d329ac0351710c
+      internalID: -276218735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-      name: Chest_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df48b08625f54c34cac0d1a544601043
-      internalID: -1681095037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_4
-========
       name: DinoBot_idle (upd)_2
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-        width: 32
-        height: 32
-========
         width: 64
         height: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,55 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-      spriteID: 1d50c71d7c598b8439ac6121ac2c9613
-      internalID: -1912810809
-========
-      spriteID: e9b581e851431f640918edad5ed6b8ee
-      internalID: -1861017634
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
+      spriteID: 3c16f878f61be964f89da256111c6ba8
+      internalID: 891662378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-      name: Chest_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43a97f54e7199944f918258b66fd45d2
-      internalID: -755892785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Chest_6
-========
       name: DinoBot_idle (upd)_3
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-        width: 32
-        height: 32
-========
         width: 64
         height: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,27 +174,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-      spriteID: 0b7fa3e7360088d4bb5453c8ec6607d2
-      internalID: -866732526
-========
-      spriteID: e24c9ff456c4bc8498577074da9e190b
-      internalID: 1801761195
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
+      spriteID: 09186aabbdf22ad4a966b421f14078cb
+      internalID: 984063118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-      name: Chest_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-========
       name: DinoBot_idle (upd)_4
       rect:
         serializedVersion: 2
@@ -320,7 +188,6 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,12 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-      spriteID: 9c9cb11b6324a724c9fa1d1e3a8f9c25
-      internalID: 1861037916
-========
-      spriteID: 5ae09546405534742a5f918437e016d9
-      internalID: 1365018452
+      spriteID: 31a1284f5d5e5cc4fa4f8ef1b986db8a
+      internalID: -307317622
       vertices: []
       indices: 
       edges: []
@@ -353,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da5616a181b90d041ab92cc43c2b5182
-      internalID: -2040934449
+      spriteID: 1f17e2bffbf17274baa2b198304f6dc0
+      internalID: 42972286
       vertices: []
       indices: 
       edges: []
@@ -374,9 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1f320970ad9d9f4d9d4e903727af3c7
-      internalID: 1714770508
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
+      spriteID: ddcfd8fa3667de64aa022c27c6aea418
+      internalID: 326021428
       vertices: []
       indices: 
       edges: []
@@ -384,7 +246,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 960dcaf47e35aff42afce0a86888e040
     internalID: 0
     vertices: []
     indices: 
@@ -392,24 +254,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Chest.png.meta
-      Chest_0: -1990556827
-      Chest_1: -614533583
-      Chest_2: 905300697
-      Chest_3: -1681095037
-      Chest_4: -1912810809
-      Chest_5: -755892785
-      Chest_6: -866732526
-      Chest_7: 1861037916
-========
-      DinoBot_idle (upd)_0: 1784886144
-      DinoBot_idle (upd)_1: 1900591079
-      DinoBot_idle (upd)_2: -1861017634
-      DinoBot_idle (upd)_3: 1801761195
-      DinoBot_idle (upd)_4: 1365018452
-      DinoBot_idle (upd)_5: -2040934449
-      DinoBot_idle (upd)_6: 1714770508
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/DinoBot/DinoBot_idle (upd).png.meta
+      DinoBot_idle (upd)_0: 163491799
+      DinoBot_idle (upd)_1: -276218735
+      DinoBot_idle (upd)_2: 891662378
+      DinoBot_idle (upd)_3: 984063118
+      DinoBot_idle (upd)_4: -307317622
+      DinoBot_idle (upd)_5: 42972286
+      DinoBot_idle (upd)_6: 326021428
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -41,6 +42,17 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if(Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            GameManager.Instance.SaveGame();
+            SceneManager.LoadScene("Main Menu");
+            
+            
+        }
+    }
+
     public async void SaveGame()
     {
         if (inventoryController == null)
@@ -62,6 +74,7 @@ public class GameManager : MonoBehaviour
         string json = JsonUtility.ToJson(saveData);
         await File.WriteAllTextAsync(saveLocation, json);
         Debug.Log("Game Saved Successfully!");
+        Debug.Log(saveLocation);
     }
 
     public async void LoadGame() 
