@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Daniel_GameManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Daniel_GameManager : MonoBehaviour
     [SerializeField] private Cell _cellPrefab;
     [SerializeField] private Transform _edgePrefab;
 
+    public Scene scene;
     private bool hasGameFinished;
     private Cell[,] cells;
     private List<Vector2Int> filledPoints;
@@ -47,6 +49,11 @@ public class Daniel_GameManager : MonoBehaviour
                 cells[i, j].transform.position = new Vector3(j + 0.5f, i + 0.5f, 0);
             }
         }
+    }
+
+    private void Start()
+    {
+        scene = SceneManager.GetActiveScene();
     }
 
     private void Update()
@@ -213,12 +220,27 @@ public class Daniel_GameManager : MonoBehaviour
         }
 
         hasGameFinished = true;
+        if(scene.name.Equals("Computer Level 1"))
+        {
+            GameManager.Instance.completeConnLevel1();
+        }
+        else if (scene.name.Equals("Computer Level 2"))
+        {
+            GameManager.Instance.completeConnLevel2();
+        }
+        else if (scene.name.Equals("Computer Level 3"))
+        {
+            GameManager.Instance.completeConnLevel3();
+        }
+
         StartCoroutine(GameFinished());
+
+
     }
 
     private IEnumerator GameFinished()
     {
         yield return new WaitForSeconds(0.7f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Station");  
+        SceneManager.LoadScene("Station");  
     }
 }

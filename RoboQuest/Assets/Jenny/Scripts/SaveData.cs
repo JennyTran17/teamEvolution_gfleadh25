@@ -16,6 +16,10 @@ public class SaveData
     public bool completeFuel = false;
     public bool completeCP = false;
 
+    public bool completeConnLvl1 = false;
+    public bool completeConnLvl2 = false;
+    public bool completeConnLvl3 = false;
+
     public Quaternion planetPosition;
 }
 

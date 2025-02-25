@@ -11,14 +11,21 @@ public class Daniel_PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    public AudioSource walkingAudio;
+
+    public GameObject wiresPrefab;
+    public Transform wiresLocation;
+    
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
 
         animator = gameObject.GetComponent<Animator>();
-        
+
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        
+        walkingAudio = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,10 +35,12 @@ public class Daniel_PlayerMovement : MonoBehaviour
         if (movement != Vector2.zero)
         {
             animator.SetBool("Walking", true);
+            walkingAudio.enabled = true;
 
             if (movement.x < 0)
             {
                 spriteRenderer.flipX = false;
+                
             }
             else
             {
@@ -42,6 +51,20 @@ public class Daniel_PlayerMovement : MonoBehaviour
         else
         {
             animator.SetBool("Walking", false);
+            walkingAudio.enabled = false;
+        }
+    }
+
+    public void createWires()
+    {
+
+        if (GameManager.Instance != null)
+        {
+            if (GameManager.Instance.saveData.completeConnLvl1 && GameManager.Instance.saveData.completeConnLvl2 && GameManager.Instance.saveData.completeConnLvl3)
+            {
+                //Instantiate an object with the wire sprite
+                Instantiate(wiresPrefab, wiresLocation);
+            }
         }
     }
 

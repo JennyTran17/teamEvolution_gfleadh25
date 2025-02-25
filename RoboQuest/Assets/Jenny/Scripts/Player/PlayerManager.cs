@@ -17,8 +17,12 @@ public class PlayerManager : MonoBehaviour
     private GameObject planet;
     public GameObject secretExit; //cave room
     public Scene scene;
+    
 
     private Animator playerAnimator; // For later use
+
+    public AudioSource walkingAudio; // Walking audio source
+    public AudioSource jumpAudio; // Jumping audio source
 
     private SpriteRenderer spriteRenderer;
 
@@ -36,6 +40,7 @@ public class PlayerManager : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         playerAnimator = gameObject.GetComponent<Animator>();
+        walkingAudio = gameObject.GetComponent<AudioSource>();
         spriteRenderer.flipX = false;
 
         if (planet == null && scene.name.Equals("Main Level"))
@@ -61,10 +66,14 @@ public class PlayerManager : MonoBehaviour
         {
             spriteRenderer.flipX = movement.x > 0;
             playerAnimator.SetBool("Run", true);
+            walkingAudio.enabled = true;
+            Debug.Log("Walking sound");
         }
         else
         {
             playerAnimator.SetBool("Run", false);
+            walkingAudio.enabled = false;
+            
         }
 
         // Update isGrounded in Animator
@@ -96,6 +105,17 @@ public class PlayerManager : MonoBehaviour
                 jumpCounter = 0;
                 playerAnimator.SetTrigger("Jump");
                 Debug.Log("Player has jumped!");
+
+                //if (jumpAudio.enabled == false)
+                //{
+                //    jumpAudio.enabled = true;
+                //    Debug.Log("Jump sound played");
+                //}
+                //else if (jumpAudio.enabled == true)
+                //{
+                //    jumpAudio.enabled = false;
+                //}
+                
             }
 
             if (groundCheck.isGrounded != true && jumpCounter < 3)
@@ -103,7 +123,6 @@ public class PlayerManager : MonoBehaviour
 
                 rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
                 jumpCounter += 1;
-                // animator.SetTrigger("Jump");
             }
         }
     }
@@ -184,7 +203,12 @@ public class PlayerManager : MonoBehaviour
         }
 
 
-}
+    }
+
+    public void JumpSoundTrigger()
+    {
+        jumpAudio.Play();
+    }
 
 
 }

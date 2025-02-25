@@ -234,4 +234,23 @@ public class GameManager : MonoBehaviour
         saveData.completeCP = true;
         SaveGame();
     }
+
+    public void completeConnLevel1()
+    {
+        saveData.completeConnLvl1 = true;
+        SaveGame();
+    }
+
+    public void completeConnLevel2()
+    {
+        saveData.completeConnLvl2 = true;
+        SaveGame();
+    }
+
+    public void completeConnLevel3()
+    {
+        saveData.completeConnLvl3 = true;
+        SaveGame();
+    }
+
 }

@@ -25,6 +25,7 @@ public class Dialogue : MonoBehaviour
         {
             continueButton.SetActive(true);
         }
+        
     }
 
     public IEnumerator Type()
