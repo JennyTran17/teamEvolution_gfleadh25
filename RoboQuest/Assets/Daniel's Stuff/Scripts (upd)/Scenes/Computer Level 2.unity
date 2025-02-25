@@ -258,9 +258,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6754ad5520522042a1ecfca4e3a5ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: {fileID: 11400000, guid: a973c6175d37090499f7d63bb3305a5a, type: 2}
+  _level: {fileID: 11400000, guid: b945a3ba9d3930646b8518b0f9d1e476, type: 2}
   _cellPrefab: {fileID: 5177507590486486883, guid: bc92bf9b01c0ddb4eb9409e6cb408d8c, type: 3}
   _edgePrefab: {fileID: 5447850150516141073, guid: c8c8fa5df81f1e046900d5cbe3942da1, type: 3}
+  scene:
+    m_Handle: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

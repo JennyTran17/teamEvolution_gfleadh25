@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Daniel_GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Daniel_GameManager : MonoBehaviour
     [SerializeField] private Level _level;
     [SerializeField] private Cell _cellPrefab;
     [SerializeField] private Transform _edgePrefab;
+
+    public Scene scene;
 
     private bool hasGameFinished;
     private Cell[,] cells;
@@ -49,6 +52,10 @@ public class Daniel_GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        scene = SceneManager.GetActiveScene();
+    }
     private void Update()
     {
         if (hasGameFinished) return;
@@ -213,6 +220,19 @@ public class Daniel_GameManager : MonoBehaviour
         }
 
         hasGameFinished = true;
+        if(scene.name.Equals("Computer Level 1"))
+        {
+            GameManager.Instance.completeConnLevel1();
+        }
+        else if(scene.name.Equals("Computer Level 2"))
+        {
+            GameManager.Instance.completeConnLevel2();
+        }
+        else if(scene.name.Equals("Computer Level 3"))
+        {
+            GameManager.Instance.completeConnLevel3();
+        }
+
         StartCoroutine(GameFinished());
     }
 
