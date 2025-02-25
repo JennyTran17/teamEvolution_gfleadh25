@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Materials/Locker4.mat.meta
 guid: 1ca7c07f98149e7428b25fddb332cf50
+========
+guid: fede755e29da685458f5822c937c0cb4
+>>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Robot Anim/dinobot_jump.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000

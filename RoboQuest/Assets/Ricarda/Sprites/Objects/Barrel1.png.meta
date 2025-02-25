@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Barrel1.png.meta
 guid: 788563e325a497040b02f15c021187dd
+========
+guid: 1d9976e18de3a1546a16523a935917a5
+>>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/misc/planet.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +52,11 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/Objects/Barrel1.png.meta
   spritePixelsToUnits: 16
+========
+  spritePixelsToUnits: 180
+>>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/misc/planet.png.meta
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1

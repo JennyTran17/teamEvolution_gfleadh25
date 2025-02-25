@@ -44,7 +44,7 @@
                 {
                     "name": "Interact",
                     "type": "Button",
-                    "id": "950654b0-1de8-42b3-99e5-a5296b06ece6",
+                    "id": "154b4656-1ae1-40da-a2c0-b60e07aa5ef1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -285,11 +285,11 @@
                 },
                 {
                     "name": "",
-                    "id": "69c0e292-a747-4b76-bde7-0e8828d9b834",
+                    "id": "a8419548-d8f6-4c55-985c-dc8274b13370",
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse;Gamepad;Touch",
+                    "groups": "",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false

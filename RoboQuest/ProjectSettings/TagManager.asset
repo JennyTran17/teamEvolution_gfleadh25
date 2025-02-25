@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Planet
   - FixTarget
   - SecretExit
   - FreeJumpZone
@@ -24,7 +23,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Puzzle Overlay
   - 
   - 
   - 
@@ -55,5 +54,5 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: SortingLayer
-    uniqueID: 1376682749
+    uniqueID: 922144401
     locked: 0

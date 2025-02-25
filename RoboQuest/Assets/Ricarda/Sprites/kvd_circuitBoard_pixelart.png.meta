@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Sprites/kvd_circuitBoard_pixelart.png.meta
 guid: 414395c824d3ece468879cb4b315689c
+========
+guid: d9f9e999fc1523948ba95880bc929fb2
+>>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Main Menu/bg_space.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -37,9 +41,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 2
+    wrapV: 2
+    wrapW: 2
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

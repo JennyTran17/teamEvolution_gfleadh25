@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:RoboQuest/Assets/Kalyn/Rhythm Game Tutorial/Graphics/image.jpg.meta
 guid: caaafe84d5e1ce447a704192fb212a9e
+========
+guid: 0026cb884bdeb9d4097922aaa2657742
+>>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/grid.jpg.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +38,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +76,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

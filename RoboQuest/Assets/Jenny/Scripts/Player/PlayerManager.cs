@@ -18,6 +18,10 @@ public class PlayerManager : MonoBehaviour
     public GameObject secretExit; //cave room
     public Scene scene;
 
+    private Animator playerAnimator; // For later use
+
+    private SpriteRenderer spriteRenderer;
+
     public bool allowFreeJump = false; // Toggle free jumping
     public float freeJumpForce = 7f;   //Force for free jumping
 
@@ -30,6 +34,10 @@ public class PlayerManager : MonoBehaviour
     {
         scene = SceneManager.GetActiveScene();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        playerAnimator = gameObject.GetComponent<Animator>();
+        spriteRenderer.flipX = false;
+
         if (planet == null && scene.name.Equals("Main Level"))
         {
             planet = GameObject.FindGameObjectWithTag("Planet");
@@ -45,10 +53,23 @@ public class PlayerManager : MonoBehaviour
     private void Update()
     {
         if (scene.name.Equals("Cave"))
-    {
+        {
             HandleInput();
         }
-       
+
+        if (movement != Vector2.zero && groundCheck.isGrounded)
+        {
+            spriteRenderer.flipX = movement.x > 0;
+            playerAnimator.SetBool("Run", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("Run", false);
+        }
+
+        // Update isGrounded in Animator
+        playerAnimator.SetBool("isGrounded", groundCheck.isGrounded);
+
     }
 
     void OnMove(InputValue movePosition)
@@ -73,7 +94,8 @@ public class PlayerManager : MonoBehaviour
 
                 rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
                 jumpCounter = 0;
-                //animator.SetTrigger("Jump");
+                playerAnimator.SetTrigger("Jump");
+                Debug.Log("Player has jumped!");
             }
 
             if (groundCheck.isGrounded != true && jumpCounter < 3)

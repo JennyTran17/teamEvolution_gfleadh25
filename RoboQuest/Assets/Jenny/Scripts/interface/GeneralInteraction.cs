@@ -11,7 +11,7 @@ public abstract class GeneralInteraction : MonoBehaviour, Interactable
     public Transform _playerTransform;
     
     
-    private const float INTERACT_DISTANCE = 2.5F;
+    private const float INTERACT_DISTANCE = 2F;
  
 
     void Update()
@@ -21,8 +21,6 @@ public abstract class GeneralInteraction : MonoBehaviour, Interactable
             Interact();
             Debug.Log("interact called");
         }
-             
-
         if (interactSprite.gameObject.activeSelf && !IsWithinInteractDistance())
         {
             //turn off the sprite

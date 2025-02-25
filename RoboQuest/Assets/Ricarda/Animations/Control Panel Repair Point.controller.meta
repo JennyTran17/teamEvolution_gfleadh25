@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:RoboQuest/Assets/Ricarda/Animations/Control Panel Repair Point.controller.meta
 guid: 674146a9b7018e74da60eca80ce231e6
+========
+guid: 07828a234dba14c4d8b0441b777f331e
+>>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Main Menu/Animations/Buttons.controller.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
