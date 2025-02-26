@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
 {
     public float rotationSpeed = 20f;
     public float playerSpeed = 5.0f;
-    private Vector2 movement;
+    public Vector2 movement;
     public int jumpImpulse = 7;
     private int jumpCounter = 0;
     public GroundCheck groundCheck;
@@ -22,8 +22,8 @@ public class PlayerManager : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    public bool allowFreeJump = false; // Toggle free jumping
-    public float freeJumpForce = 7f;   //Force for free jumping
+   // public bool allowFreeJump = false; // Toggle free jumping
+   // public float freeJumpForce = 7f;   //Force for free jumping
 
     //secret exit implementation
     private string[] correctSequence = { "R", "R", "U", "L", "U", "R", "L", "L", "U", "R" }; // Correct sequence
@@ -81,13 +81,13 @@ public class PlayerManager : MonoBehaviour
 
     void OnJump()
     {
-        if (allowFreeJump)
-        {
-            // NEW: Free jump mode (No ground check)
-            rb.velocity = Vector2.up * freeJumpForce;
-        }
-        else
-        {
+        //if (allowFreeJump)
+        //{
+        //    // NEW: Free jump mode (No ground check)
+        //    rb.velocity = Vector2.up * freeJumpForce;
+        //}
+        //else
+        //{
             // Trigger the Jump Animation
             if (groundCheck.isGrounded == true)
             {
@@ -105,7 +105,7 @@ public class PlayerManager : MonoBehaviour
                 jumpCounter += 1;
                 // animator.SetTrigger("Jump");
             }
-        }
+       // }
     }
 
     private void FixedUpdate()
@@ -123,22 +123,22 @@ public class PlayerManager : MonoBehaviour
     }
 
     // NEW: Detect when player enters the free jump area
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("FreeJumpZone"))
-        {
-            allowFreeJump = true;
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.CompareTag("FreeJumpZone"))
+    //    {
+    //        allowFreeJump = true;
+    //    }
+    //}
 
-    //Detect when player exits the free jump area
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("FreeJumpZone"))
-        {
-            allowFreeJump = false;
-        }
-    }
+    ////Detect when player exits the free jump area
+    //private void OnTriggerExit2D(Collider2D other)
+    //{
+    //    if (other.CompareTag("FreeJumpZone"))
+    //    {
+    //        allowFreeJump = false;
+    //    }
+    //}
     //Secret Exit Implementation
     void HandleInput()
     {
@@ -152,7 +152,7 @@ public class PlayerManager : MonoBehaviour
             playerSequence.Add("R");
             CheckSequence();
     }
-        else if (Keyboard.current.spaceKey.wasPressedThisFrame) // Up
+        else if (Keyboard.current.upArrowKey.wasPressedThisFrame) // Up
         {
             playerSequence.Add("U");
             CheckSequence();
