@@ -11,7 +11,7 @@ public class InventoryController : MonoBehaviour
     public int slotCount;
     public GameObject[] itemPrefabs;
 
-    public AudioSource itemCollectedAudio;
+    //public AudioSource itemCollectedAudio;
   
 
     private void Start()
@@ -51,7 +51,7 @@ public class InventoryController : MonoBehaviour
                 //newItem.transform.localScale = new Vector3(0.8f, 1f, 1f); 
                 slot.currentItem = newItem;
 
-                itemCollectedAudio.Play();
+                //itemCollectedAudio.Play();
 
                 return true;
             }

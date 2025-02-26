@@ -59,12 +59,18 @@ public class Daniel_PlayerMovement : MonoBehaviour
 
         if(GameManager.Instance.saveData.completeConnLvl1 && GameManager.Instance.saveData.completeConnLvl2 && GameManager.Instance.saveData.completeConnLvl3)
         {
-            wiresPrefab.SetActive(true);
+            if(wiresPrefab != null)
+            {
+                wiresPrefab.SetActive(true);
+            }
             tileUnderWires.SetActive(true);
         }
         else
         {
-            wiresPrefab.SetActive(false);
+            if(wiresPrefab != null)
+            {
+                wiresPrefab.SetActive(false);
+            }
             tileUnderWires.SetActive(false);
         }
 
