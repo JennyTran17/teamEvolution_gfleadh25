@@ -250,7 +250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5b284e07c426f5142bcbdbd13ca934d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68ea95fa71e3de243b717447ee0e0e34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -873,6 +873,7 @@ MonoBehaviour:
   - {fileID: 29039640824044592, guid: 6d8b7670dc55a004a8321506893c3009, type: 3}
   - {fileID: 1672397030713154869, guid: c9fbf68b32a88d54da3a18aa9795a657, type: 3}
   - {fileID: 3750656258017135556, guid: 54a344b4b42f8f341841084096f50981, type: 3}
+  itemCollectedAudio: {fileID: 0}
 --- !u!114 &354651746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,6 +897,9 @@ MonoBehaviour:
     completeEngine: 0
     completeFuel: 0
     completeCP: 0
+    completeConnLvl1: 0
+    completeConnLvl2: 0
+    completeConnLvl3: 0
     planetPosition: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &354651747
 Transform:
@@ -7902,7 +7906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 20
   playerSpeed: 5
-  jumpImpulse: 3
+  jumpImpulse: 5
   groundCheck: {fileID: 2051128813}
   rb: {fileID: 2051128809}
   secretExit: {fileID: 0}

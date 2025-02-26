@@ -62,12 +62,16 @@ public class PlayerManager : MonoBehaviour
             HandleInput();
         }
 
-        if (movement != Vector2.zero && groundCheck.isGrounded)
+        if (movement != Vector2.zero)
         {
             spriteRenderer.flipX = movement.x > 0;
-            playerAnimator.SetBool("Run", true);
-            walkingAudio.enabled = true;
-            Debug.Log("Walking sound");
+
+            if(groundCheck.isGrounded)
+            {
+                playerAnimator.SetBool("Run", true);
+                walkingAudio.enabled = true;
+                Debug.Log("Walking sound");
+            }
         }
         else
         {
@@ -141,7 +145,7 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    // NEW: Detect when player enters the free jump area
+    // NEW: Detect when player enters the free jump area (Cave)
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("FreeJumpZone"))
@@ -158,6 +162,7 @@ public class PlayerManager : MonoBehaviour
             allowFreeJump = false;
         }
     }
+
     //Secret Exit Implementation
     void HandleInput()
     {
@@ -171,7 +176,7 @@ public class PlayerManager : MonoBehaviour
             playerSequence.Add("R");
             CheckSequence();
     }
-        else if (Keyboard.current.spaceKey.wasPressedThisFrame) // Up
+        else if (Keyboard.current.upArrowKey.wasPressedThisFrame) // Up
         {
             playerSequence.Add("U");
             CheckSequence();
