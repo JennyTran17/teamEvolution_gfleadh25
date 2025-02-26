@@ -19,11 +19,11 @@ EditorBuildSettings:
     guid: a9b72c00ad4194649bfa02f9ea65bbe7
   - enabled: 1
     path: Assets/Ricarda/Scenes/Ship.unity
-    guid: 372b994b74f7eaf4f90cbb7885e9067b
+    guid: 8bd5f798f43d78941a2eb2acf09ed902
   - enabled: 1
     path: Assets/Ricarda/Scenes/Control Puzzle.unity
     guid: 8bac32871720d6e429fb6cba2a0e8ae8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Ricarda/Scenes/Engine Puzzle.unity
     guid: e44ce7cc90f6cc140a75846f67376e1c
   - enabled: 1
