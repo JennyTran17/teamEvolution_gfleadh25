@@ -13,8 +13,11 @@ public class Daniel_PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public AudioSource walkingAudio;
 
+    //public Daniel_GameManager danielGM;
+
     public GameObject wiresPrefab;
-    public Transform wiresLocation;
+    public GameObject tileUnderWires;
+    //public Transform wiresLocation;
     
 
     void Start()
@@ -53,20 +56,32 @@ public class Daniel_PlayerMovement : MonoBehaviour
             animator.SetBool("Walking", false);
             walkingAudio.enabled = false;
         }
-    }
 
-    public void createWires()
-    {
-
-        if (GameManager.Instance != null)
+        if(GameManager.Instance.saveData.completeConnLvl1 && GameManager.Instance.saveData.completeConnLvl2 && GameManager.Instance.saveData.completeConnLvl3)
         {
-            if (GameManager.Instance.saveData.completeConnLvl1 && GameManager.Instance.saveData.completeConnLvl2 && GameManager.Instance.saveData.completeConnLvl3)
-            {
-                //Instantiate an object with the wire sprite
-                Instantiate(wiresPrefab, wiresLocation);
-            }
+            wiresPrefab.SetActive(true);
+            tileUnderWires.SetActive(true);
         }
+        else
+        {
+            wiresPrefab.SetActive(false);
+            tileUnderWires.SetActive(false);
+        }
+
     }
+
+    //public void createWires()
+    //{
+
+    //    if (GameManager.Instance != null)
+    //    {
+    //        if (GameManager.Instance.saveData.completeConnLvl1 && GameManager.Instance.saveData.completeConnLvl2 && GameManager.Instance.saveData.completeConnLvl3)
+    //        {
+    //            //Instantiate an object with the wire sprite
+    //            Instantiate(wiresPrefab, wiresLocation);
+    //        }
+    //    }
+    //}
 
     private void FixedUpdate()
     {
