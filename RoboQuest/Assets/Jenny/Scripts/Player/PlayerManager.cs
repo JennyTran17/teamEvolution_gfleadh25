@@ -52,7 +52,7 @@ public class PlayerManager : MonoBehaviour
             secretExit = GameObject.FindGameObjectWithTag("SecretExit");
             secretExit.SetActive(false);
         
-    }
+        }
 
     }
     private void Update()

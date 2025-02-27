@@ -11,11 +11,14 @@ public class MenuController : MonoBehaviour
         inventoryMenu.SetActive(false);
     }
 
-    public void OpenCloseMenu()
+    private void Update()
     {
-        if (!inventoryMenu.activeSelf)
-        { inventoryMenu.SetActive(true); }
-        else { inventoryMenu.SetActive(false); }
+        if(Keyboard.current.enterKey.wasPressedThisFrame)
+        {
+            if (!inventoryMenu.activeSelf)
+            { inventoryMenu.SetActive(true); }
+            else { inventoryMenu.SetActive(false); }
+        }
     }
 
 }
