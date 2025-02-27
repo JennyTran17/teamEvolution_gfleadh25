@@ -11,7 +11,6 @@ public class alertManager : MonoBehaviour
     // these are changed in their respective repair/fuel point
     public bool wiresNeeded_Alert = false;
     public bool fuelNeeded_Alert = false;
-    public bool sparePartsNeeded_Alert = false;
 
 
     // Start is called before the first frame update
@@ -43,17 +42,6 @@ public class alertManager : MonoBehaviour
             StartCoroutine(displayTimer(1));
 
         }
-
-        if (sparePartsNeeded_Alert)
-        {
-            alertText.color = Color.red;
-            alertText.text = "Spare Parts Needed !!!";
-
-            StartCoroutine(displayTimer(2));
-
-        }
-
-
     }
 
 
@@ -62,9 +50,17 @@ public class alertManager : MonoBehaviour
         // wait 2 seconds
         yield return new WaitForSeconds(2);
 
+        if (type == 0 )
+        {
+            wiresNeeded_Alert = false;
+        }
+        if (type == 1)
+        {
+            fuelNeeded_Alert = false;
+        }
 
         //// Check if any other alerts are true
-        if (wiresNeeded_Alert || fuelNeeded_Alert || sparePartsNeeded_Alert)
+        if (wiresNeeded_Alert || fuelNeeded_Alert)
         {
             // Do nothing, as there is already another alert being displayed
         }
