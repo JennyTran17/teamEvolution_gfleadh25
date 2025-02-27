@@ -16,6 +16,7 @@ public class NoteObject : MonoBehaviour
         canSpawn = true;
     }
 
+
     public void CreateArrow()
     {
         if (!canSpawn) return;

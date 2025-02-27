@@ -51,10 +51,14 @@ public class PlayerManager : MonoBehaviour
             HandleInput();
         }
 
-        if (movement != Vector2.zero && groundCheck.isGrounded)
+        if (movement != Vector2.zero)
         {
             spriteRenderer.flipX = movement.x > 0;
-            playerAnimator.SetBool("Run", true);
+            if (groundCheck.isGrounded)
+            {
+                playerAnimator.SetBool("Run", true);
+            }
+
         }
         else
         {

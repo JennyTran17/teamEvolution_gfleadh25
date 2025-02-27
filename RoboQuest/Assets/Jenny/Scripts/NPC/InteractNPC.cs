@@ -29,7 +29,7 @@ public class InteractNPC : GeneralInteraction
             dialogue.dialogueBox.SetActive(true); // Activate the dialogue box
             dialogue.StartCoroutine(dialogue.Type()); // Start typing the new dialogue
             hasNextDialogueTriggered = true; // Mark the battery dialogue as triggered
-            Instantiate(fuelPrefab, transform.position, Quaternion.identity);
+            fuelPrefab.SetActive(true);
         }
         else if (!dialogue.dialogueBox.activeInHierarchy)
         {

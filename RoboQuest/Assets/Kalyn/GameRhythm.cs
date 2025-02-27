@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameRhythm : MonoBehaviour
@@ -31,7 +32,7 @@ public class GameRhythm : MonoBehaviour
     public Text GameOverText;// Text object to display "Game Over"
     public Text WinText;// text object to display win 
     public Text LivesText;
-    private bool gameOver = false;
+    public bool gameOver = false;
 
     public GameObject Battery;
     // Start is called before the first frame update
@@ -50,30 +51,39 @@ public class GameRhythm : MonoBehaviour
     {
         if (gameOver)
         {
-            return; // Skip game logic if the game is over
-        }
-        if (!startPlaynig)
-        {
-            
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            if(Keyboard.current.enterKey.wasPressedThisFrame)
             {
-                Debug.Log("Space key pressed!");
-                startPlaynig = true;
-                theBS.hasStarted = true;
-                noteController.StartSpawning(); //call spawn arrow- set boolean spawn = true
-                //noteController.createArrow();
-                if (theMusic != null)
-                {
-                    theMusic.Play();
-                    Debug.Log("Music Started");
-                   
-                }
-                else
-                {
-                    Debug.Log("AudioSource is not assigned!");
-                }
+            
+                SceneManager.LoadScene("Kalyn");
+               
             }
+            return;
+            
         }
+        //if (!startPlaynig)
+        //{
+            
+        //    if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        //    {
+        //        GameObject instruction = GameObject.Find("instruction");
+        //        instruction.SetActive(false);
+        //        Debug.Log("Space key pressed!");
+        //        startPlaynig = true;
+        //        theBS.hasStarted = true;
+        //        noteController.StartSpawning(); //call spawn arrow- set boolean spawn = true
+        //        //noteController.createArrow();
+        //        if (theMusic != null)
+        //        {
+        //            theMusic.Play();
+        //            Debug.Log("Music Started");
+                   
+        //        }
+        //        else
+        //        {
+        //            Debug.Log("AudioSource is not assigned!");
+        //        }
+        //    }
+        //}
 
         if (startPlaynig && Time.time >= nextBeatTime) //Time.time is the gameplay time
         {
@@ -87,12 +97,14 @@ public class GameRhythm : MonoBehaviour
             GameOver();
         }
 
-
+        
+        
         // Check if lives are 0 and game over
-        if (lives == 0 && !gameOver)
+        if (lives <= 0 && !gameOver)
         {
-            GameOver();
+            nolives();
         }
+        
     }
 
     // miss or hit notes 
@@ -172,7 +184,7 @@ public class GameRhythm : MonoBehaviour
             {
                 // Show "Game Over" message
                 GameOverText.gameObject.SetActive(true);
-                GameOverText.text = "Game Over!\nFinal Score: " + currentScore;
+                GameOverText.text = "Game Over!\nFinal Score: " + currentScore + "\n Press Enter to restart";
                 
             }
 
@@ -181,4 +193,36 @@ public class GameRhythm : MonoBehaviour
 
         //Time.timeScale = 0; // freeze the game
     }
+
+    private void OnTriggerEnter2D(Collider2D obj)
+    {
+        if (obj.gameObject.CompareTag("Player"))
+        {
+            if (!startPlaynig)
+            {
+
+
+                GameObject instruction = GameObject.Find("instruction");
+                instruction.SetActive(false);
+                Debug.Log("Space key pressed!");
+                startPlaynig = true;
+                theBS.hasStarted = true;
+                noteController.StartSpawning(); //call spawn arrow- set boolean spawn = true
+                                                //noteController.createArrow();
+                if (theMusic != null)
+                {
+                    theMusic.Play();
+                    Debug.Log("Music Started");
+
+                }
+                else
+                {
+                    Debug.Log("AudioSource is not assigned!");
+                }
+
+            }
+        }
+    }
+
+
 }
