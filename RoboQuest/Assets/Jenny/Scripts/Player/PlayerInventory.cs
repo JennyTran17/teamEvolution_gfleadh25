@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     private InventoryController inventoryController;
-  
-   
+
+    public AudioSource itemCollectAudio;
 
     private void Start()
     {
@@ -27,6 +27,7 @@ public class PlayerInventory : MonoBehaviour
                 GameManager.Instance.RemoveDroppedItem(item.ID, item.transform.position); //
                 if (itemAdded)
                 {
+                    itemCollectAudio.Play();
                     Destroy(collision.gameObject);
                 }
 

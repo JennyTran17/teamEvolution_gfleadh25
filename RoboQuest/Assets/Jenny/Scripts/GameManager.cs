@@ -217,6 +217,7 @@ public class GameManager : MonoBehaviour
     public void SaveHasWire()
     {
         saveData.hasWire = true;
+
         SaveGame();
     }
     public void SaveHasFuel()

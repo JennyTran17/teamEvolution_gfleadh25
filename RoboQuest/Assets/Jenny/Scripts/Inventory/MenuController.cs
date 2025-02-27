@@ -18,7 +18,6 @@ public class MenuController : MonoBehaviour
             if (!inventoryMenu.activeSelf)
             { inventoryMenu.SetActive(true); }
             else { inventoryMenu.SetActive(false); }
-
         }
     }
    

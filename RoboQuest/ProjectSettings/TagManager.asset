@@ -16,6 +16,7 @@ TagManager:
   - effect
   - Collectables
   - Spike
+  - Planet
   layers:
   - Default
   - TransparentFX

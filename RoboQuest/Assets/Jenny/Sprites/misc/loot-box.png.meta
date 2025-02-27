@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:RoboQuest/Assets/Kalyn/Rhythm Game Tutorial/Graphics/image.jpg.meta
-guid: 02ead3786630ac64eb1886a5107a55ab
-========
-guid: 0026cb884bdeb9d4097922aaa2657742
->>>>>>>> daniel_development:RoboQuest/Assets/Daniel's Stuff/Sprites/grid.jpg.meta
+guid: 28148f1b58d9812478b8b65bd9abde01
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

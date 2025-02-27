@@ -12,7 +12,6 @@ public class Daniel_GameManager : MonoBehaviour
     [SerializeField] private Transform _edgePrefab;
 
     public Scene scene;
-
     private bool hasGameFinished;
     private Cell[,] cells;
     private List<Vector2Int> filledPoints;
@@ -39,7 +38,7 @@ public class Daniel_GameManager : MonoBehaviour
         camPos.x = _level.Col * 0.5f;
         camPos.y = _level.Row * 0.5f;
         Camera.main.transform.position = camPos;
-        Camera.main.orthographicSize = Mathf.Max(_level.Row, _level.Col) + 2f;
+        Camera.main.orthographicSize = Mathf.Max(_level.Row, _level.Col) - 1.5f;
 
         for (int i = 0; i < _level.Row; i++)
         {
@@ -224,21 +223,23 @@ public class Daniel_GameManager : MonoBehaviour
         {
             GameManager.Instance.completeConnLevel1();
         }
-        else if(scene.name.Equals("Computer Level 2"))
+        else if (scene.name.Equals("Computer Level 2"))
         {
             GameManager.Instance.completeConnLevel2();
         }
-        else if(scene.name.Equals("Computer Level 3"))
+        else if (scene.name.Equals("Computer Level 3"))
         {
             GameManager.Instance.completeConnLevel3();
         }
 
         StartCoroutine(GameFinished());
+
+
     }
 
     private IEnumerator GameFinished()
     {
         yield return new WaitForSeconds(0.7f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Station");  
+        SceneManager.LoadScene("Station");  
     }
 }
