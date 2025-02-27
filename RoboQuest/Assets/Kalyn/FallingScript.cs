@@ -7,11 +7,13 @@ public class FallingScript : MonoBehaviour
     public float beatTempo = 2.0f;
     public bool hasStarted = false;
     public GameObject sparkleEffect;
+    private GameRhythm gameRhythm;
 
     void Start()
     {
         float bpm = 126.4f; //beat temp
         beatTempo = (bpm / 60f) * 4f; // beat per sec * (any number to controll how fast or slow)
+        gameRhythm = GameObject.FindFirstObjectByType<GameRhythm>();
     }
 
     void Update()
@@ -19,6 +21,10 @@ public class FallingScript : MonoBehaviour
         if (hasStarted)
         {
             transform.position -= new Vector3(0f, beatTempo * Time.deltaTime, 0f);
+        }
+        if(gameRhythm.lives <= 0)
+        {
+            hasStarted = false;
         }
     }
 

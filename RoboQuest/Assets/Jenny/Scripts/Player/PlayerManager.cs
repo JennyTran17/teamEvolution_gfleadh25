@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
 {
     public float rotationSpeed = 20f;
     public float playerSpeed = 5.0f;
-    private Vector2 movement;
+    public Vector2 movement;
     public int jumpImpulse = 7;
     private int jumpCounter = 0;
     public GroundCheck groundCheck;
@@ -19,16 +19,11 @@ public class PlayerManager : MonoBehaviour
     public Scene scene;
 
     private Animator playerAnimator; // For later use
-
     private SpriteRenderer spriteRenderer;
-
-    public bool allowFreeJump = false; // Toggle free jumping
-    public float freeJumpForce = 7f;   //Force for free jumping
 
     //secret exit implementation
     private string[] correctSequence = { "R", "R", "U", "L", "U", "R", "L", "L", "U", "R" }; // Correct sequence
     private List<string> playerSequence = new List<string>(); // Tracks the player's moves
-
 
     private void Start()
     {
@@ -42,14 +37,13 @@ public class PlayerManager : MonoBehaviour
         {
             planet = GameObject.FindGameObjectWithTag("Planet");
         }
-        if(secretExit == null && scene.name.Equals("Cave"))
+        if (secretExit == null && scene.name.Equals("Cave"))
         {
             secretExit = GameObject.FindGameObjectWithTag("SecretExit");
             secretExit.SetActive(false);
-        
+        }
     }
 
-    }
     private void Update()
     {
         if (scene.name.Equals("Cave"))
@@ -57,10 +51,14 @@ public class PlayerManager : MonoBehaviour
             HandleInput();
         }
 
-        if (movement != Vector2.zero && groundCheck.isGrounded)
+        if (movement != Vector2.zero)
         {
             spriteRenderer.flipX = movement.x > 0;
-            playerAnimator.SetBool("Run", true);
+            if (groundCheck.isGrounded)
+            {
+                playerAnimator.SetBool("Run", true);
+            }
+
         }
         else
         {
@@ -69,77 +67,45 @@ public class PlayerManager : MonoBehaviour
 
         // Update isGrounded in Animator
         playerAnimator.SetBool("isGrounded", groundCheck.isGrounded);
-
     }
 
     void OnMove(InputValue movePosition)
     {
-        //Get Player Position
+        // Get Player Position
         movement = movePosition.Get<Vector2>();
- 
     }
 
     void OnJump()
     {
-        if (allowFreeJump)
+        if (groundCheck.isGrounded == true)
         {
-            // NEW: Free jump mode (No ground check)
-            rb.velocity = Vector2.up * freeJumpForce;
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+            jumpCounter = 0;
+            playerAnimator.SetTrigger("Jump");
+            Debug.Log("Player has jumped!");
         }
-        else
+
+        if (groundCheck.isGrounded != true && jumpCounter < 3)
         {
-            // Trigger the Jump Animation
-            if (groundCheck.isGrounded == true)
-            {
-
-                rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
-                jumpCounter = 0;
-                playerAnimator.SetTrigger("Jump");
-                Debug.Log("Player has jumped!");
-            }
-
-            if (groundCheck.isGrounded != true && jumpCounter < 3)
-            {
-
-                rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
-                jumpCounter += 1;
-                // animator.SetTrigger("Jump");
-            }
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+            jumpCounter += 1;
         }
     }
 
     private void FixedUpdate()
     {
-
-        //Move the planet
+        // Move the planet
         if (planet != null)
         {
             planet.transform.Rotate(0, 0, movement.x * rotationSpeed * Time.deltaTime);
             GameManager.Instance.SavePlanetPosition(planet.transform.rotation);
         }
-        //player movement
+
+        // Player movement
         rb.velocity = new Vector2((movement.x * playerSpeed), rb.velocity.y);
-
     }
 
-    // NEW: Detect when player enters the free jump area
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("FreeJumpZone"))
-        {
-            allowFreeJump = true;
-        }
-    }
-
-    //Detect when player exits the free jump area
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("FreeJumpZone"))
-        {
-            allowFreeJump = false;
-        }
-    }
-    //Secret Exit Implementation
+    // Secret Exit Implementation
     void HandleInput()
     {
         if (Keyboard.current.aKey.wasPressedThisFrame || Keyboard.current.leftArrowKey.wasPressedThisFrame) // Left
@@ -151,8 +117,8 @@ public class PlayerManager : MonoBehaviour
         {
             playerSequence.Add("R");
             CheckSequence();
-    }
-        else if (Keyboard.current.spaceKey.wasPressedThisFrame) // Up
+        }
+        else if (Keyboard.current.upArrowKey.wasPressedThisFrame) // Up
         {
             playerSequence.Add("U");
             CheckSequence();
@@ -161,32 +127,22 @@ public class PlayerManager : MonoBehaviour
 
     void CheckSequence()
     {
-        // Index to track progress through the correct sequence
         int correctSequenceIndex = 0;
 
-        // Loop through the player's sequence
         for (int i = 0; i < playerSequence.Count; i++)
         {
-            // If the current player input matches the expected input in the correct sequence
             if (playerSequence[i] == correctSequence[correctSequenceIndex])
             {
-                correctSequenceIndex++; // Move to the next expected input in the correct sequence
+                correctSequenceIndex++;
 
-                // If the entire correct sequence has been matched
                 if (correctSequenceIndex == correctSequence.Length)
                 {
                     Debug.Log("Correct sequence! Exit unlocked.");
                     secretExit.SetActive(true);
-                    playerSequence.Clear(); // Optionally clear the sequence after success
+                    playerSequence.Clear();
                     return;
                 }
             }
         }
-
-
+    }
 }
-
-
-}
-
-
