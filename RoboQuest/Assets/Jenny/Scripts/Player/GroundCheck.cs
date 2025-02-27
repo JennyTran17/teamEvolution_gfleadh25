@@ -35,7 +35,7 @@ public class GroundCheck : MonoBehaviour
         if (collisions > 0)
         {
             isGrounded = true;
-            Debug.Log("on ground");
+            //Debug.Log("on ground");
         }
         // if we're not colliding with the ground (jumping)
         else 
