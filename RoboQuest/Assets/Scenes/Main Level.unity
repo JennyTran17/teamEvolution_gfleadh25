@@ -762,7 +762,7 @@ Transform:
   m_GameObject: {fileID: 304480226}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.26087162, w: 0.9653736}
-  m_LocalPosition: {x: 0.36474845, y: 0.31006023, z: 0}
+  m_LocalPosition: {x: 0.3841, y: 0.3779, z: 0}
   m_LocalScale: {x: 0.014814813, y: 0.014814813, z: 0.014814813}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -966,9 +966,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.32161176, y: 0.48195848}
-      - {x: 0.23413695, y: 0.467273}
-      - {x: 0.16588968, y: 0.46657765}
+    - - {x: 0.31209445, y: 0.45241562}
+      - {x: 0.23926747, y: 0.4452809}
+      - {x: 0.17599396, y: 0.4476621}
       - {x: 0.16521682, y: 0.43295646}
       - {x: 0.2075567, y: 0.3989127}
       - {x: 0.23158026, y: 0.37602013}
@@ -977,9 +977,9 @@ PolygonCollider2D:
       - {x: 0.40325946, y: 0.19889575}
       - {x: 0.43331876, y: 0.1991686}
       - {x: 0.4396827, y: 0.25345898}
-      - {x: 0.45246688, y: 0.31864706}
+      - {x: 0.4388359, y: 0.3182229}
       - {x: 0.43916073, y: 0.33619308}
-      - {x: 0.37409148, y: 0.4134774}
+      - {x: 0.37640184, y: 0.39250097}
   m_UseDelaunayMesh: 0
 --- !u!1 &354651744
 GameObject:
@@ -998,7 +998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &354651745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,7 +1159,7 @@ GameObject:
   - component: {fileID: 445096098}
   - component: {fileID: 445096099}
   m_Layer: 0
-  m_Name: Station Spite
+  m_Name: Station Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7045,7 +7045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1309939779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7328,7 +7328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1327129588
 MonoBehaviour:
   m_ObjectHideFlags: 0

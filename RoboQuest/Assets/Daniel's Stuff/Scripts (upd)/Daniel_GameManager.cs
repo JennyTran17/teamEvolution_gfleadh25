@@ -38,7 +38,7 @@ public class Daniel_GameManager : MonoBehaviour
         camPos.x = _level.Col * 0.5f;
         camPos.y = _level.Row * 0.5f;
         Camera.main.transform.position = camPos;
-        Camera.main.orthographicSize = Mathf.Max(_level.Row, _level.Col) + 2f;
+        Camera.main.orthographicSize = Mathf.Max(_level.Row, _level.Col) - 1.5f;
 
         for (int i = 0; i < _level.Row; i++)
         {
