@@ -26,8 +26,8 @@ public class PlayerManager : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    public bool allowFreeJump = false; // Toggle free jumping
-    public float freeJumpForce = 7f;   //Force for free jumping
+    //public bool allowFreeJump = false; // Toggle free jumping
+    //public float freeJumpForce = 7f;   //Force for free jumping
 
     //secret exit implementation
     private string[] correctSequence = { "R", "R", "U", "L", "U", "R", "L", "L", "U", "R" }; // Correct sequence
@@ -96,41 +96,35 @@ public class PlayerManager : MonoBehaviour
 
     void OnJump()
     {
-        if (allowFreeJump)
+
+        // Trigger the Jump Animation
+        if (groundCheck.isGrounded == true)
         {
-            // NEW: Free jump mode (No ground check)
-            rb.velocity = Vector2.up * freeJumpForce;
+
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+            jumpCounter = 0;
+            playerAnimator.SetTrigger("Jump");
+            Debug.Log("Player has jumped!");
+
+            //if (jumpAudio.enabled == false)
+            //{
+            //    jumpAudio.enabled = true;
+            //    Debug.Log("Jump sound played");
+            //}
+            //else if (jumpAudio.enabled == true)
+            //{
+            //    jumpAudio.enabled = false;
+            //}
+
         }
-        else
+
+        if (groundCheck.isGrounded != true && jumpCounter < 3)
         {
-            // Trigger the Jump Animation
-            if (groundCheck.isGrounded == true)
-            {
 
-                rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
-                jumpCounter = 0;
-                playerAnimator.SetTrigger("Jump");
-                Debug.Log("Player has jumped!");
-
-                //if (jumpAudio.enabled == false)
-                //{
-                //    jumpAudio.enabled = true;
-                //    Debug.Log("Jump sound played");
-                //}
-                //else if (jumpAudio.enabled == true)
-                //{
-                //    jumpAudio.enabled = false;
-                //}
-                
-            }
-
-            if (groundCheck.isGrounded != true && jumpCounter < 3)
-            {
-
-                rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
-                jumpCounter += 1;
-            }
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+            jumpCounter += 1;
         }
+
     }
 
     private void FixedUpdate()
@@ -145,24 +139,6 @@ public class PlayerManager : MonoBehaviour
         //player movement
         rb.velocity = new Vector2((movement.x * playerSpeed), rb.velocity.y);
 
-    }
-
-    // NEW: Detect when player enters the free jump area (Cave)
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("FreeJumpZone"))
-        {
-            allowFreeJump = true;
-        }
-    }
-
-    //Detect when player exits the free jump area
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("FreeJumpZone"))
-        {
-            allowFreeJump = false;
-        }
     }
 
     //Secret Exit Implementation

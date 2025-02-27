@@ -18,8 +18,8 @@ public class WaterAudio : MonoBehaviour
         {
             waterAudio.Play();
             Debug.Log("Player speed changed in water");
-            //playerManager.playerSpeed = 2.5f;
-            playerManager.rb.drag = 10;
+            playerManager.playerSpeed = 2.5f;
+            //playerManager.rb.drag = 10;
         }
     }
 
@@ -28,8 +28,8 @@ public class WaterAudio : MonoBehaviour
         if (obj.gameObject.CompareTag("Player"))
         {
             waterAudio.Play();
-            // playerManager.playerSpeed = 6f;
-            playerManager.rb.drag = 0;
+            playerManager.playerSpeed = 6f;
+            //playerManager.rb.drag = 0;
         }
     }
 }
