@@ -225,14 +225,19 @@ public class GameManager : MonoBehaviour
         saveData.hasFuel = true;
         SaveGame();
     }
-    public void SaveHasSpareParts()
-    {
-        saveData.hasSpareParts = true;
-        SaveGame();
-    }
+    //public void SaveHasSpareParts()
+    //{
+    //    saveData.hasSpareParts = true;
+    //    SaveGame();
+    //}
     public void completeCP()
     {
         saveData.completeCP = true;
+        SaveGame();
+    }
+    public void completeFuel()
+    {
+        saveData.completeFuel = true;
         SaveGame();
     }
 

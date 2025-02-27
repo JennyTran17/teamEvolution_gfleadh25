@@ -11,8 +11,8 @@ public class SaveData
     public bool hasBattery= false;
     public bool hasFuel= false;
     public bool hasWire = false;
-    public bool hasSpareParts = false;
-    public bool completeEngine = false;
+   // public bool hasSpareParts = false;
+    //public bool completeEngine = false;
     public bool completeFuel = false;
     public bool completeCP = false;
 

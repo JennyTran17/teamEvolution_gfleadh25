@@ -131,14 +131,16 @@ public class SlidingPuzzleManager : MonoBehaviour
 
         Debug.Log("WIN!!!");
         puzzleSolved = true;
-        if (SceneManager.GetActiveScene().name.Equals("Engine Puzzle"))
-        {
-            if(GameManager.Instance != null)
-            {
-                Debug.Log("complete engine");
-            }
-        }
-        else if (SceneManager.GetActiveScene().name.Equals("Control Puzzle"))
+        //if (SceneManager.GetActiveScene().name.Equals("Engine Puzzle"))
+        //{
+        //    if(GameManager.Instance != null)
+        //    {
+        //        Debug.Log("complete engine");
+        //        
+        //    }
+        //}
+        //else
+        if (SceneManager.GetActiveScene().name.Equals("Control Puzzle"))
         {
             if (GameManager.Instance != null)
             {
@@ -150,7 +152,8 @@ public class SlidingPuzzleManager : MonoBehaviour
         {
             if (GameManager.Instance != null)
             {
-                Debug.Log("complete fuel");
+                GameManager.Instance.completeFuel();
+                GameManager.Instance.SaveGame();
             }
         }
         return true;
