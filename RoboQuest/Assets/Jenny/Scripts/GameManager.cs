@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         StartCoroutine(ApplyPlayerPosition());
-
+        RemoveCollectedItemsFromScene(saveData.inventorySaveData);
 
     }
 
@@ -85,9 +85,9 @@ public class GameManager : MonoBehaviour
             string json = await File.ReadAllTextAsync(saveLocation);
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
             this.saveData.collectedObjID = saveData.collectedObjID;// ensure loaded data is assigned properly
-            RemoveCollectedItemsFromScene(saveData.inventorySaveData);  //check if json file list have the item ID in the inventory, delete the game object in hierarchy
+            //RemoveCollectedItemsFromScene(saveData.inventorySaveData);  //check if json file list have the item ID in the inventory, delete the game object in hierarchy
 
-           // player.transform.position = saveData.playerPosition;
+
 
             inventoryController.SetInventoryItems(saveData.inventorySaveData);
             inventoryController.SetDropItem(saveData.droppedItems);
@@ -108,20 +108,26 @@ public class GameManager : MonoBehaviour
     private void RemoveCollectedItemsFromScene(List<InventorySaveData> savedInventory)
     {
         GameObject[] collectables = GameObject.FindGameObjectsWithTag("Collectables");
+        GameObject inventoryObject = GameObject.Find("Inventory");
 
         foreach (GameObject obj in collectables)
         {
+            
             Item item = obj.GetComponent<Item>();
             if (item != null )
             {
                 
                 foreach (int id in saveData.collectedObjID)
                 {
-                    if (item.ID == id)
+                    if (item.ID == id && !obj.transform.IsChildOf(inventoryObject.transform))
                     {
                         Debug.Log($"Destroying collected item: {obj.name} (ID: {item.ID})");
                         Destroy(obj);
                         break; // Stop checking once a match is found
+                    }
+                    else
+                    {
+                        continue;
                     }
                 }
 

@@ -6,9 +6,12 @@ using UnityEngine.InputSystem;
 public class MenuController : MonoBehaviour
 {
     public GameObject inventoryMenu;
+
     private void Start()
     {
         inventoryMenu.SetActive(false);
+        
+        
     }
 
     private void Update()
@@ -19,6 +22,8 @@ public class MenuController : MonoBehaviour
             { inventoryMenu.SetActive(true); }
             else { inventoryMenu.SetActive(false); }
         }
+
+        
     }
    
 

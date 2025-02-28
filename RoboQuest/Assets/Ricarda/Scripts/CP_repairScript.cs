@@ -16,6 +16,11 @@ public class CP_repairScript : GeneralInteraction
         GameManager manager = FindObjectOfType<GameManager>();
         if (IsWithinInteractDistance())
         {
+            if (!interactSprite.gameObject.activeSelf)
+            {
+                interactSprite.gameObject.SetActive(true);
+            }
+
             if (/*!hasWires*/ !GameManager.Instance.saveData.hasWire)
             {
               alertScript.wiresNeeded_Alert = true;
@@ -25,6 +30,10 @@ public class CP_repairScript : GeneralInteraction
         else
         {
             alertScript.wiresNeeded_Alert = false;
+            if (interactSprite.gameObject.activeSelf)
+            {
+                interactSprite.gameObject.SetActive(false);
+            }
         }
        
 

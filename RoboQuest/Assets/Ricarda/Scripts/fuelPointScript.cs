@@ -19,14 +19,28 @@ public class fuelPointScript : GeneralInteraction
         GameManager manager = FindObjectOfType<GameManager>();
         if (IsWithinInteractDistance())
         {
+            if (!interactSprite.gameObject.activeSelf)
+            {
+                interactSprite.gameObject.SetActive(true);
+            }
+          
+
             if (/*!hasFuel*/ !GameManager.Instance.saveData.hasFuel)
             {
                 alertScript.fuelNeeded_Alert = true;
+                
             }
+            
         }
         else
         {
             alertScript.fuelNeeded_Alert = false;
+
+            if (interactSprite.gameObject.activeSelf)
+            {
+                interactSprite.gameObject.SetActive(false);
+            }
+
         }
 
 

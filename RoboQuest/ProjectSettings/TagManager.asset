@@ -17,6 +17,7 @@ TagManager:
   - Collectables
   - Spike
   - Planet
+  - slots
   layers:
   - Default
   - TransparentFX

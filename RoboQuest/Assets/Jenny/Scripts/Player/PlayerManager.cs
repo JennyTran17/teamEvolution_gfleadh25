@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
 {
     public float rotationSpeed = 20f;
     public float playerSpeed = 5.0f;
-    private Vector2 movement;
+    public Vector2 movement;
     public int jumpImpulse = 7;
     private int jumpCounter = 0;
     public GroundCheck groundCheck;
