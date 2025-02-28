@@ -13,7 +13,7 @@ public class MenuController : MonoBehaviour
 
     private void Update()
     {
-        if(Keyboard.current.enterKey.wasPressedThisFrame)
+        if(Keyboard.current.qKey.wasPressedThisFrame)
         {
             if (!inventoryMenu.activeSelf)
             { inventoryMenu.SetActive(true); }

@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Dialogue : MonoBehaviour
 {
@@ -21,9 +22,13 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
-        if (textDisplay.text == sentences[index])
+        //if (textDisplay.text == sentences[index])
+        //{
+        //    continueButton.SetActive(true);
+        //}
+        if(Keyboard.current.enterKey.wasPressedThisFrame)
         {
-            continueButton.SetActive(true);
+            NextSentence();
         }
         
     }
