@@ -18,7 +18,6 @@ public class PlayerManager : MonoBehaviour
     private GameObject planet;
     public GameObject secretExit; //cave room
     public Scene scene;
-    
 
     private Animator playerAnimator; // For later use
 
@@ -27,10 +26,6 @@ public class PlayerManager : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    //public bool allowFreeJump = false; // Toggle free jumping
-    //public float freeJumpForce = 7f;   //Force for free jumping
-
-   
     //secret exit implementation
     private string[] correctSequence = { "R", "R", "U", "L", "U", "R", "L", "L", "U", "R" }; // Correct sequence
     private List<string> playerSequence = new List<string>(); // Tracks the player's moves
@@ -83,7 +78,6 @@ public class PlayerManager : MonoBehaviour
             walkingAudio.enabled = false;
             
         }
-
     }
 
     void OnMove(InputValue movePosition)
@@ -103,11 +97,7 @@ public class PlayerManager : MonoBehaviour
 
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
             jumpCounter = 0;
-            
             Debug.Log("Player has jumped!");
-
-            
-
         }
 
         if (groundCheck.isGrounded != true && jumpCounter < 3)
@@ -176,19 +166,12 @@ public class PlayerManager : MonoBehaviour
                 }
             }
         }
-
-
     }
 
     public void JumpSoundTrigger()
     {
         jumpAudio.Play();
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    playerAnimator.SetTrigger("isLanding");
-    //}
 }
 
 
