@@ -35,6 +35,9 @@ public class GameRhythm : MonoBehaviour
     public bool gameOver = false;
 
     public GameObject Battery;
+
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +47,7 @@ public class GameRhythm : MonoBehaviour
         LivesText.text = "Lives :" + lives;
         GameOverText.gameObject.SetActive(false);
         Debug.Log("Game Manager Started");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -158,6 +162,8 @@ public class GameRhythm : MonoBehaviour
         {
             // Trigger the game over
             //add death animation trigger
+            player.GetComponent<Animator>().SetTrigger("Death");
+
             GameOver();
         }
     }

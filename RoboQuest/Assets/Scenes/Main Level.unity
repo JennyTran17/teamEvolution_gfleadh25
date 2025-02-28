@@ -1012,8 +1012,6 @@ MonoBehaviour:
     hasBattery: 0
     hasFuel: 0
     hasWire: 0
-    hasSpareParts: 0
-    completeEngine: 0
     completeFuel: 0
     completeCP: 0
     completeConnLvl1: 0
@@ -7126,7 +7124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324473120}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.53729963, w: 0.8433915}
   m_LocalPosition: {x: 0.01, y: -6.21, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_ConstrainProportionsScale: 1
@@ -7135,7 +7133,7 @@ Transform:
   - {fileID: 363266449}
   - {fileID: 445096098}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 65}
 --- !u!58 &1324473126
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8520,7 +8518,7 @@ Transform:
   m_GameObject: {fileID: 2051128806}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.226, y: 1.174, z: 0}
+  m_LocalPosition: {x: -0.226, y: 2.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:

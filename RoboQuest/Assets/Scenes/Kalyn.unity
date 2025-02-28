@@ -1055,7 +1055,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 51
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -2004,8 +2004,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000030519743, y: -0.2560182}
-  m_Size: {x: 1.0000002, y: 0.48796472}
+  m_Offset: {x: -0.000000026755341, y: -0.22444008}
+  m_Size: {x: 1.0000005, y: 0.42480904}
   m_Direction: 1
 --- !u!212 &418906642
 SpriteRenderer:
@@ -2068,8 +2068,8 @@ Transform:
   m_GameObject: {fileID: 418906636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.33, y: 0.8, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: -7.8, y: 1.03, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 499086656}
@@ -2136,13 +2136,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 20
   playerSpeed: 5
-  movement: {x: 0, y: 0}
   jumpImpulse: 3
   groundCheck: {fileID: 418906639}
   rb: {fileID: 418906637}
   secretExit: {fileID: 0}
   scene:
     m_Handle: 0
+  walkingAudio: {fileID: 0}
+  jumpAudio: {fileID: 0}
 --- !u!1 &433774531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2192,6 +2193,7 @@ MonoBehaviour:
   LivesText: {fileID: 1660355198}
   gameOver: 0
   Battery: {fileID: 2908295793287239962, guid: 1e5642f1a86371b43aa8661a562694f5, type: 3}
+  player: {fileID: 0}
 --- !u!4 &433774533
 Transform:
   m_ObjectHideFlags: 0
@@ -11580,8 +11582,6 @@ MonoBehaviour:
     hasBattery: 0
     hasFuel: 0
     hasWire: 0
-    hasSpareParts: 0
-    completeEngine: 0
     completeFuel: 0
     completeCP: 0
     completeConnLvl1: 0

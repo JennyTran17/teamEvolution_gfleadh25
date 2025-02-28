@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -29,6 +30,7 @@ public class PlayerManager : MonoBehaviour
     //public bool allowFreeJump = false; // Toggle free jumping
     //public float freeJumpForce = 7f;   //Force for free jumping
 
+   
     //secret exit implementation
     private string[] correctSequence = { "R", "R", "U", "L", "U", "R", "L", "L", "U", "R" }; // Correct sequence
     private List<string> playerSequence = new List<string>(); // Tracks the player's moves
@@ -82,9 +84,6 @@ public class PlayerManager : MonoBehaviour
             
         }
 
-        // Update isGrounded in Animator
-        playerAnimator.SetBool("isGrounded", groundCheck.isGrounded);
-
     }
 
     void OnMove(InputValue movePosition)
@@ -96,6 +95,7 @@ public class PlayerManager : MonoBehaviour
 
     void OnJump()
     {
+        playerAnimator.SetTrigger("Jump");
 
         // Trigger the Jump Animation
         if (groundCheck.isGrounded == true)
@@ -103,18 +103,10 @@ public class PlayerManager : MonoBehaviour
 
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
             jumpCounter = 0;
-            playerAnimator.SetTrigger("Jump");
+            
             Debug.Log("Player has jumped!");
 
-            //if (jumpAudio.enabled == false)
-            //{
-            //    jumpAudio.enabled = true;
-            //    Debug.Log("Jump sound played");
-            //}
-            //else if (jumpAudio.enabled == true)
-            //{
-            //    jumpAudio.enabled = false;
-            //}
+            
 
         }
 
@@ -193,7 +185,10 @@ public class PlayerManager : MonoBehaviour
         jumpAudio.Play();
     }
 
-
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    playerAnimator.SetTrigger("isLanding");
+    //}
 }
 
 
