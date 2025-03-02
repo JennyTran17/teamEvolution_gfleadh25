@@ -215,7 +215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Movement:\nInteract: \ndialogue:\ninventory:\npause:\n"
+  m_text: "Movement:\nInteract: \ndialogue:\ninventory:\nmain menu:\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac3dc2c30e42fad4ea55729c069f8bd2, type: 2}
   m_sharedMaterial: {fileID: 8807551035025658204, guid: ac3dc2c30e42fad4ea55729c069f8bd2, type: 2}
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 20
   m_wordSpacing: 0
-  m_lineSpacing: 32.13
+  m_lineSpacing: 38.96
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

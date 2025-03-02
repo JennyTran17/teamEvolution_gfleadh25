@@ -161,6 +161,11 @@ public class PlayerManager : MonoBehaviour
                 {
                     Debug.Log("Correct sequence! Exit unlocked.");
                     secretExit.SetActive(true);
+                    if(CinemachineShake.instance != null)
+                    {
+                        CinemachineShake.instance.ShakeCamera(3f, 2f);
+                    }
+                   
                     playerSequence.Clear(); // Optionally clear the sequence after success
                     return;
                 }

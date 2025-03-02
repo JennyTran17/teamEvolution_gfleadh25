@@ -9,7 +9,7 @@ public class exit : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Player") && SceneManager.GetActiveScene().name.Equals("Ship"))
-        {
+        { 
             Animator animator = gameObject.GetComponent<Animator>();
             animator.SetTrigger("open");
         }
@@ -29,4 +29,6 @@ public class exit : MonoBehaviour
             animator.SetTrigger("close");
         }
     }
+
+    
 }

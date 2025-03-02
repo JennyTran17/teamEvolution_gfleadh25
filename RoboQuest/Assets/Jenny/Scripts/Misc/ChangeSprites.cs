@@ -9,14 +9,14 @@ public class ChangeSprites : MonoBehaviour
     private SpriteRenderer spriteR;
     public Sprite[] spritesChange;
 
-    Light2D globalLight;
-    float intensity;
+    //Light2D globalLight;
+    //float intensity;
 
     void Start()
     {
        
         spriteR = gameObject.GetComponent<SpriteRenderer>();
-        globalLight = GameObject.Find("Global Light").GetComponent<Light2D>();
+        //globalLight = GameObject.Find("Global Light").GetComponent<Light2D>();
 
     }
     private void Update()
@@ -38,7 +38,7 @@ public class ChangeSprites : MonoBehaviour
                 spriteR.sprite = spritesChange[0];
             }
 
-            globalLight.intensity = 1f;
+            //globalLight.intensity = 1f;
         }
 
     }
