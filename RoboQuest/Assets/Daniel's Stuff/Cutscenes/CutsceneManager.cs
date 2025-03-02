@@ -22,7 +22,6 @@ public class CutsceneManager : MonoBehaviour
 
     void OnVideoFinished(VideoPlayer vp)
     {
-        // Load the main level scene when the video finishes
-        SceneManager.LoadScene("Main Level");
+        SceneManager.LoadScene(mainLevel);
     }
 }

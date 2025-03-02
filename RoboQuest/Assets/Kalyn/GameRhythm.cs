@@ -11,6 +11,8 @@ public class GameRhythm : MonoBehaviour
     public bool startPlaynig = false;
     public static GameRhythm instance;// prevents multple instances of the scripts
     public FallingScript theBS;
+
+    public AudioSource crystalAudio;
     
 
     public int currentScore;
@@ -21,7 +23,7 @@ public class GameRhythm : MonoBehaviour
     public int[] multiplyerThresholds;//create an array to use for levels
     public NoteObject noteController;
     public Text ScoreText ;
-    public Text Multitext ;
+    //public Text Multitext ;
     public GameObject sparkleEffect;
 
     public float beatInterval = (60 / 126.4f) * 2f; // Adjust based on song BPM
@@ -115,7 +117,8 @@ public class GameRhythm : MonoBehaviour
     public void NoteHit() 
     {
         
-
+        crystalAudio.Play();
+        
         if (currentMultiplyer - 1 < multiplyerThresholds.Length)
         {
             multiplyertracker++;
@@ -129,7 +132,7 @@ public class GameRhythm : MonoBehaviour
 
             }
         }
-        Multitext.text = "Multiplier: x" + currentMultiplyer;
+        //Multitext.text = "Multiplier: x" + currentMultiplyer;
 
         Debug.Log("Note was hit ontime");
         currentScore += score_perNote * currentMultiplyer;
@@ -142,7 +145,7 @@ public class GameRhythm : MonoBehaviour
         currentMultiplyer = 1;
         multiplyertracker = 0;
 
-        Multitext.text = "Multiplier: x" + currentMultiplyer;
+        //Multitext.text = "Multiplier: x" + currentMultiplyer;
         Debug.Log("Note was missed");
     
     }
@@ -179,18 +182,19 @@ public class GameRhythm : MonoBehaviour
 
         if (gameOver == true)
         {
-            if (currentScore >= 2000)
-            {// show win  message
+            if (currentScore >= 5000)
+            {
+                // show win  message
                 WinText.gameObject.SetActive(true);
                 WinText.text = "Power cell Crafted!\nFinal Score: " + currentScore;
 
                 Instantiate(Battery, transform.position, Quaternion.identity);
             }
-            else if (currentScore < 2000)
+            else if (currentScore < 5000 || lives == 0)
             {
                 // Show "Game Over" message
                 GameOverText.gameObject.SetActive(true);
-                GameOverText.text = "Game Over!\nFinal Score: " + currentScore + "\n Press Enter to restart";
+                GameOverText.text = "Not enough crystals!\nFinal Score: " + currentScore + "\n Press Enter to Restart the Level!";
                 
             }
 

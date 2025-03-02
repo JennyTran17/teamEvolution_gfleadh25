@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 77629481}
   - component: {fileID: 77629483}
   m_Layer: 0
-  m_Name: Intro Cutscene
+  m_Name: Outro Cutscene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,11 +148,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77629480}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 990bea176505de7488548c8d6751da69, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 00c1ac45f482d444cbe5eec32825b4aa, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 61e6de12483cafb4a97f7b84576b93de, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: c21b3543512d6064a998a39872a7b0de, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 77629481}
-  mainLevel: Main Level
+  mainLevel: Main Menu
 --- !u!1 &590645904
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &590645908
 RectTransform:
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 61e6de12483cafb4a97f7b84576b93de, type: 2}
+  m_Texture: {fileID: 8400000, guid: c21b3543512d6064a998a39872a7b0de, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
