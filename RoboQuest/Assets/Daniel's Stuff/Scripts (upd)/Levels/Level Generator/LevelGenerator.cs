@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -229,3 +230,4 @@ public class LevelGenerator : MonoBehaviour
         return pos.x >= 0 && pos.y >= 0 && pos.x < _level.Row && pos.y < _level.Col;
     }
 }
+#endif

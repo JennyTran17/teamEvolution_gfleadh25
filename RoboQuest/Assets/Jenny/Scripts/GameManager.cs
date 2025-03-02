@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         if(Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             SaveGame();
-            Application.Quit();
+            SceneManager.LoadScene("Main Menu");
             
             
         }
