@@ -4,7 +4,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UIElements;
+#if UNITY_EDITOR
 using UnityEditor.UIElements;
+#endif
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), typeof(EdgeCollider2D))]
 [RequireComponent (typeof(WaterTriggerHandler))]
@@ -220,9 +222,11 @@ public class InteractableWater : MonoBehaviour
         }
     }
 }
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(InteractableWater))]
+
 public class InteractableWaterEditor : Editor
+
 {
     private InteractableWater _water;
     private void OnEnable()
@@ -250,6 +254,7 @@ public class InteractableWaterEditor : Editor
         root.Add(placeEdgeColliderButton);
         return root;
     }
+
 
     private void  ChangeDimensions(ref float width, ref float height, float calculatedWidthMax, float calculatedHeightMax)
     {
@@ -323,3 +328,4 @@ public class InteractableWaterEditor : Editor
     }
 }
 
+#endif
