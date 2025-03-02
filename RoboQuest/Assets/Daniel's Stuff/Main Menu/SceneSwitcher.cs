@@ -7,18 +7,15 @@ public class SceneSwitcher : MonoBehaviour
 {
     public string sceneName;
 
-    private void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-        
-    }
-
     public void changeScene()
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void quitGame()
+    {
+        // Quit the application
+        Application.Quit();
+        Debug.Log("Exiting the game");
     }
 }
