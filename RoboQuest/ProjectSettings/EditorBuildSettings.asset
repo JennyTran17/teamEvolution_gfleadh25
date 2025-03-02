@@ -6,9 +6,42 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Daniel's Stuff/Main Menu.unity
+    guid: 179cec2e656195c48a5a826a80d92cd3
+  - enabled: 1
+    path: Assets/Daniel's Stuff/Cutscenes/Intro.unity
+    guid: 580bd7cf48cefce4bbb84c047f13bf96
+  - enabled: 1
     path: Assets/Scenes/Main Level.unity
     guid: 0611aeb1e2a149443ae5c142b91fe098
   - enabled: 1
     path: Assets/Scenes/Cave.unity
     guid: e73a5041752a1d34188c4c0dd79893c2
+  - enabled: 1
+    path: Assets/Scenes/Kalyn.unity
+    guid: a9b72c00ad4194649bfa02f9ea65bbe7
+  - enabled: 1
+    path: Assets/Ricarda/Scenes/Ship.unity
+    guid: 8bd5f798f43d78941a2eb2acf09ed902
+  - enabled: 1
+    path: Assets/Daniel's Stuff/Station.unity
+    guid: f2827f2cc1273344094773e4e7f69114
+  - enabled: 1
+    path: Assets/Ricarda/Scenes/Control Puzzle.unity
+    guid: 8bac32871720d6e429fb6cba2a0e8ae8
+  - enabled: 1
+    path: Assets/Ricarda/Scenes/Fuel Puzzle.unity
+    guid: 2b33b073897cc9444a1e58915a8e99a0
+  - enabled: 1
+    path: Assets/Daniel's Stuff/Scripts (upd)/Scenes/Computer Level 1.unity
+    guid: 0063c4e922e640e4e91e6b9e1c7f96e7
+  - enabled: 1
+    path: Assets/Daniel's Stuff/Scripts (upd)/Scenes/Computer Level 2.unity
+    guid: 176b572bd4de90d4da049daa3dfbc95d
+  - enabled: 1
+    path: Assets/Daniel's Stuff/Scripts (upd)/Scenes/Computer Level 3.unity
+    guid: 06819106f399b2a4c9116c632cf879a5
+  - enabled: 1
+    path: Assets/Daniel's Stuff/Cutscenes/Outro.unity
+    guid: 5291036633e01bd43b3360cf29f83f7e
   m_configObjects: {}

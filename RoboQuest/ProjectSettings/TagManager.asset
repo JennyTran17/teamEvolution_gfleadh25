@@ -4,11 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Planet
   - FixTarget
   - SecretExit
   - FreeJumpZone
+  - Activator
+  - fallingobj
+  - bluearrow
+  - yellowarrow
+  - greenarrow
+  - redarrow
+  - effect
   - Collectables
+  - Spike
+  - Planet
+  - slots
   layers:
   - Default
   - TransparentFX
@@ -16,7 +25,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Puzzle Overlay
   - 
   - 
   - 
@@ -47,5 +56,5 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: SortingLayer
-    uniqueID: 1376682749
+    uniqueID: 922144401
     locked: 0

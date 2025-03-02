@@ -11,18 +11,16 @@ public abstract class GeneralInteraction : MonoBehaviour, Interactable
     public Transform _playerTransform;
     
     
-    private const float INTERACT_DISTANCE = 3.5F;
+    private const float INTERACT_DISTANCE = 2F;
  
 
     void Update()
     {
-        if (Keyboard.current.fKey.isPressed && IsWithinInteractDistance())
+        if (Keyboard.current.fKey.wasPressedThisFrame && IsWithinInteractDistance())
         {
             Interact();
             Debug.Log("interact called");
         }
-             
-
         if (interactSprite.gameObject.activeSelf && !IsWithinInteractDistance())
         {
             //turn off the sprite
@@ -33,6 +31,7 @@ public abstract class GeneralInteraction : MonoBehaviour, Interactable
         {
             //turn on the sprite
             interactSprite.gameObject.SetActive(true);
+            GameManager.Instance.SaveGame();
         }
        
     }

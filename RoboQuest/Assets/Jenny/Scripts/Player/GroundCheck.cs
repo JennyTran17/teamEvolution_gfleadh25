@@ -5,23 +5,22 @@ using UnityEngine;
 [RequireComponent(typeof(CapsuleCollider2D))]
 public class GroundCheck : MonoBehaviour
 {
-
     CapsuleCollider2D capsuleCollider2D;
     public ContactFilter2D cast;
-    public float groundDistance = 0.1F;
+    public float groundDistance = -1.5F;
     RaycastHit2D[] raycastHit2D = new RaycastHit2D[5];
     public bool isGrounded = false;
+    private Animator playerAnimator;
 
-    // Start is called before the first frame update
     void Start()
     {
         capsuleCollider2D = gameObject.GetComponent<CapsuleCollider2D>();
+        playerAnimator = gameObject.GetComponent<Animator>(); 
     }
 
-    // Update is called once per frame
     void Update()
     {
-       // Debug.DrawRay(transform.position, transform.forward, Color.green);
+        Debug.DrawRay(transform.position, transform.forward, Color.green);
     }
 
     void FixedUpdate()
@@ -33,13 +32,12 @@ public class GroundCheck : MonoBehaviour
         if (collisions > 0)
         {
             isGrounded = true;
-          //  Debug.Log("on ground");
+            //Debug.Log("on ground");
         }
-        // if we're not colliding with the ground (jumping)
+        // If we're not colliding with the ground (jumping)
         else 
         {
             isGrounded = false;
-            
         }
     }
 }

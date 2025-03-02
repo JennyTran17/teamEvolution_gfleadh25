@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -9,17 +10,21 @@ public class PlayerManager : MonoBehaviour
 {
     public float rotationSpeed = 20f;
     public float playerSpeed = 5.0f;
-    private Vector2 movement;
+    public Vector2 movement;
     public int jumpImpulse = 7;
     private int jumpCounter = 0;
     public GroundCheck groundCheck;
     public Rigidbody2D rb;
     private GameObject planet;
     public GameObject secretExit; //cave room
-    Scene scene;
+    public Scene scene;
 
-    public bool allowFreeJump = false; // Toggle free jumping
-    public float freeJumpForce = 7f;   //Force for free jumping
+    private Animator playerAnimator; // For later use
+
+    public AudioSource walkingAudio; // Walking audio source
+    public AudioSource jumpAudio; // Jumping audio source
+
+    private SpriteRenderer spriteRenderer;
 
     //secret exit implementation
     private string[] correctSequence = { "R", "R", "U", "L", "U", "R", "L", "L", "U", "R" }; // Correct sequence
@@ -30,6 +35,11 @@ public class PlayerManager : MonoBehaviour
     {
         scene = SceneManager.GetActiveScene();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        playerAnimator = gameObject.GetComponent<Animator>();
+        walkingAudio = gameObject.GetComponent<AudioSource>();
+        spriteRenderer.flipX = false;
+
         if (planet == null && scene.name.Equals("Main Level"))
         {
             planet = GameObject.FindGameObjectWithTag("Planet");
@@ -39,16 +49,35 @@ public class PlayerManager : MonoBehaviour
             secretExit = GameObject.FindGameObjectWithTag("SecretExit");
             secretExit.SetActive(false);
         
-    }
+        }
+
+        
 
     }
     private void Update()
     {
         if (scene.name.Equals("Cave"))
-    {
+        {
             HandleInput();
         }
-       
+
+        if (movement != Vector2.zero)
+        {
+            spriteRenderer.flipX = movement.x > 0;
+
+            if(groundCheck.isGrounded)
+            {
+                playerAnimator.SetBool("Run", true);
+                walkingAudio.enabled = true;
+                Debug.Log("Walking sound");
+            }
+        }
+        else
+        {
+            playerAnimator.SetBool("Run", false);
+            walkingAudio.enabled = false;
+            
+        }
     }
 
     void OnMove(InputValue movePosition)
@@ -60,30 +89,24 @@ public class PlayerManager : MonoBehaviour
 
     void OnJump()
     {
-        if (allowFreeJump)
+        playerAnimator.SetTrigger("Jump");
+
+        // Trigger the Jump Animation
+        if (groundCheck.isGrounded == true)
         {
-            // NEW: Free jump mode (No ground check)
-            rb.velocity = Vector2.up * freeJumpForce;
+
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+            jumpCounter = 0;
+            Debug.Log("Player has jumped!");
         }
-        else
+
+        if (groundCheck.isGrounded != true && jumpCounter < 3)
         {
-            // Trigger the Jump Animation
-            if (groundCheck.isGrounded == true)
-            {
 
-                rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
-                jumpCounter = 0;
-                //animator.SetTrigger("Jump");
-            }
-
-            if (groundCheck.isGrounded != true && jumpCounter < 3)
-            {
-
-                rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
-                jumpCounter += 1;
-                // animator.SetTrigger("Jump");
-            }
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+            jumpCounter += 1;
         }
+
     }
 
     private void FixedUpdate()
@@ -93,29 +116,13 @@ public class PlayerManager : MonoBehaviour
         if (planet != null)
         {
             planet.transform.Rotate(0, 0, movement.x * rotationSpeed * Time.deltaTime);
+            GameManager.Instance.SavePlanetPosition(planet.transform.rotation);
         }
         //player movement
         rb.velocity = new Vector2((movement.x * playerSpeed), rb.velocity.y);
 
     }
 
-    // NEW: Detect when player enters the free jump area
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("FreeJumpZone"))
-        {
-            allowFreeJump = true;
-        }
-    }
-
-    //Detect when player exits the free jump area
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("FreeJumpZone"))
-        {
-            allowFreeJump = false;
-        }
-    }
     //Secret Exit Implementation
     void HandleInput()
     {
@@ -129,7 +136,7 @@ public class PlayerManager : MonoBehaviour
             playerSequence.Add("R");
             CheckSequence();
     }
-        else if (Keyboard.current.spaceKey.wasPressedThisFrame) // Up
+        else if (Keyboard.current.upArrowKey.wasPressedThisFrame) // Up
         {
             playerSequence.Add("U");
             CheckSequence();
@@ -154,16 +161,22 @@ public class PlayerManager : MonoBehaviour
                 {
                     Debug.Log("Correct sequence! Exit unlocked.");
                     secretExit.SetActive(true);
+                    if(CinemachineShake.instance != null)
+                    {
+                        CinemachineShake.instance.ShakeCamera(3f, 2f);
+                    }
+                   
                     playerSequence.Clear(); // Optionally clear the sequence after success
                     return;
                 }
             }
         }
+    }
 
-
-}
-
-
+    public void JumpSoundTrigger()
+    {
+        jumpAudio.Play();
+    }
 }
 
 

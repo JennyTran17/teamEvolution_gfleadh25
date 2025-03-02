@@ -12,17 +12,31 @@ public class InteractScene : GeneralInteraction
         {
             manager.SaveGame();
             Debug.Log("enter scene station");
+            SceneManager.LoadScene("Station");
         }
         else if(gameObject.name.Equals("Ship") && IsWithinInteractDistance())
         {
             manager.SaveGame();
             Debug.Log("enter scene ship");
+            SceneManager.LoadScene("Ship");
         }
         else if(gameObject.name.Equals("Choir Passage") && IsWithinInteractDistance())
         {
             
             manager.SaveGame(); //save before load different scene
-           // SceneManager.LoadScene("Passage");
+            SceneManager.LoadScene("Kalyn");
+        }
+        else if (gameObject.name.Equals("Cave") && IsWithinInteractDistance())
+        {
+
+            manager.SaveGame(); //save before load different scene
+            SceneManager.LoadScene("Cave");
+        }
+        else if (gameObject.name.Equals("Main Level") && IsWithinInteractDistance())
+        {
+
+            manager.SaveGame(); //save before load different scene
+            SceneManager.LoadScene("Main Level");
         }
 
     }

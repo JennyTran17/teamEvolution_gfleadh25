@@ -20,7 +20,7 @@ public class NPC_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(playerInventory.transform.position, transform.position) < INTERACT_DISTANCE && playerInventory.hasBattery)
+        if ((Vector2.Distance(playerInventory.transform.position, transform.position) < INTERACT_DISTANCE) && GameManager.Instance.saveData.hasBattery)
         {
             npcAnimator.SetTrigger("wake");
             StartCoroutine(ChangeAnimation(3));

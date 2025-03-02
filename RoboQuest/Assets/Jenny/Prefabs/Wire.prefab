@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2627484597339237178, guid: 1e5642f1a86371b43aa8661a562694f5, type: 3}
+      propertyPath: ID
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2908295793287239962, guid: 1e5642f1a86371b43aa8661a562694f5, type: 3}
       propertyPath: m_Name
       value: Wire
