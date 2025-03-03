@@ -262,4 +262,10 @@ public class GameManager : MonoBehaviour
         saveData.completeConnLvl3 = true;
         SaveGame();
     }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
 }

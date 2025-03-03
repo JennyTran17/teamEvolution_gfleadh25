@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class SceneSwitcher : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SceneSwitcher : MonoBehaviour
 
     public void changeScene()
     {
+        
         SceneManager.LoadScene(sceneName);
     }
 
@@ -18,4 +20,5 @@ public class SceneSwitcher : MonoBehaviour
         Application.Quit();
         Debug.Log("Exiting the game");
     }
+
 }
