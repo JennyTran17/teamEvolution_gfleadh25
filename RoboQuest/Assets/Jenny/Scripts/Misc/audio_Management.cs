@@ -7,7 +7,11 @@ public class audio_Management : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        audioSource.Play();
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            audioSource.Play();
+
+        }
     }
 
 
