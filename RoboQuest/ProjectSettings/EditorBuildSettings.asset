@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Ricarda/Scenes/Control Puzzle.unity
     guid: 8bac32871720d6e429fb6cba2a0e8ae8
   - enabled: 1
-    path: Assets/Ricarda/Scenes/Fuel Puzzle.unity
+    path: Assets/Ricarda/Scenes/[Old] Fuel Puzzle.unity
     guid: 2b33b073897cc9444a1e58915a8e99a0
   - enabled: 1
     path: Assets/Daniel's Stuff/Scripts (upd)/Scenes/Computer Level 1.unity
