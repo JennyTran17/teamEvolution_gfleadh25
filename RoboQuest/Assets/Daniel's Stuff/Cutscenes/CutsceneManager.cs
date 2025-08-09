@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class CutsceneManager : MonoBehaviour
 
         // Callback for when the video finishes playing
         videoPlayer.loopPointReached += OnVideoFinished;
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current.enterKey.wasPressedThisFrame)
+        {
+            SceneManager.LoadScene(mainLevel);
+        }
     }
 
     void OnVideoFinished(VideoPlayer vp)

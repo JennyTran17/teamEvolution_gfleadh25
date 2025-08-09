@@ -10,6 +10,11 @@ public class Daniel_GameManager : MonoBehaviour
     [SerializeField] private Level _level;
     [SerializeField] private Cell _cellPrefab;
     [SerializeField] private Transform _edgePrefab;
+    
+    // Audio Sources when interacting with the puzzle
+    public AudioSource addSFX;
+    public AudioSource removeSFX;
+    public AudioSource solvedSFX;
 
     public Scene scene;
     private bool hasGameFinished;
@@ -58,13 +63,15 @@ public class Daniel_GameManager : MonoBehaviour
     private void Update()
     {
         if (hasGameFinished) return;
-
+        
+        // Get the position of when the mouse was clicked
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             startPos = new Vector2Int(Mathf.FloorToInt(mousePos.y), Mathf.FloorToInt(mousePos.x));
             endPos = startPos;
         }
+        // Get the position as the mouse is clicked and held down
         else if (Input.GetMouseButton(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -72,8 +79,12 @@ public class Daniel_GameManager : MonoBehaviour
 
             if (!IsNeighbour()) return;
 
+            // Initial square that will be filled
             if (AddEmpty())
             {
+                // Audio for the interaction
+                addSFX.Play();
+
                 filledPoints.Add(startPos);
                 filledPoints.Add(endPos);
                 cells[startPos.x, startPos.y].Add();
@@ -87,9 +98,14 @@ public class Daniel_GameManager : MonoBehaviour
                     );
                 bool horizontal = (endPos.y - startPos.y) < 0 || (endPos.y - startPos.y) > 0;
                 edge.transform.eulerAngles = new Vector3(0, 0, horizontal ? 90f : 0);
+                Debug.Log("AddEmpty method is on");
             }
+            // The following squares to be filled
             else if (AddToEnd())
             {
+                // Audio for the interaction
+                addSFX.Play();
+
                 filledPoints.Add(endPos);
                 cells[endPos.x, endPos.y].Add();
                 Transform edge = Instantiate(_edgePrefab);
@@ -101,6 +117,7 @@ public class Daniel_GameManager : MonoBehaviour
                     );
                 bool horizontal = (endPos.y - startPos.y) < 0 || (endPos.y - startPos.y) > 0;
                 edge.transform.eulerAngles = new Vector3(0, 0, horizontal ? 90f : 0);
+                Debug.Log("AddToEnd method is on");
             }
             else if (AddToStart())
             {
@@ -115,14 +132,20 @@ public class Daniel_GameManager : MonoBehaviour
                     );
                 bool horizontal = (endPos.y - startPos.y) < 0 || (endPos.y - startPos.y) > 0;
                 edge.transform.eulerAngles = new Vector3(0, 0, horizontal ? 90f : 0);
+                Debug.Log("AddToStart method is on");
             }
+            // Remove filled squares from the latest point 
             else if (RemoveFromEnd())
             {
+                // Remove SFX played on interaction
+                removeSFX.Play();
+
                 Transform removeEdge = edges[edges.Count - 1];
                 edges.RemoveAt(edges.Count - 1);
                 Destroy(removeEdge.gameObject);
                 filledPoints.RemoveAt(filledPoints.Count - 1);
                 cells[startPos.x, startPos.y].Remove();
+                Debug.Log("RemoveFromEnd method is on");
             }
             else if (RemoveFromStart())
             {
@@ -131,6 +154,7 @@ public class Daniel_GameManager : MonoBehaviour
                 Destroy(removeEdge.gameObject);
                 filledPoints.RemoveAt(0);
                 cells[startPos.x, startPos.y].Remove();
+                Debug.Log("RemoveFromStart method is on");
             }
 
             RemoveEmpty();
@@ -207,6 +231,7 @@ public class Daniel_GameManager : MonoBehaviour
         return pos.x >= 0 && pos.y >= 0 && pos.x < _level.Row && pos.y < _level.Col;
     }
 
+    // If all the squares have been filled 
     private void CheckWin()
     {
         for (int i = 0; i < _level.Row; i++)
@@ -219,6 +244,10 @@ public class Daniel_GameManager : MonoBehaviour
         }
 
         hasGameFinished = true;
+
+        // When puzzle solved, play the SFX
+        solvedSFX.PlayDelayed(0.3f); // Play the sound 0.3 seconds after
+
         if(scene.name.Equals("Computer Level 1"))
         {
             GameManager.Instance.completeConnLevel1();
@@ -239,7 +268,7 @@ public class Daniel_GameManager : MonoBehaviour
 
     private IEnumerator GameFinished()
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Station");  
     }
 }
