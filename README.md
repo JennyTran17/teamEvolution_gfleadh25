@@ -1,2 +1,2 @@
-# teamEvolution_gfleadh25
+# RoboQuest Game - teamEvolution_gfleadh25
 Project made for the Game Fleadh 2025 -- A short game where a broken robot is trapped on an abandoned planet in isolation, and its goal is to find ways to escape by repairing its spaceship, fleeing then off the planet somewhere into the void...
